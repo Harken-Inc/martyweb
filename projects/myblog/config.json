@@ -1,0 +1,19 @@
+{
+  "name": "My Blog",
+  "domain": "myblog.com",
+  "description": "Personal thoughts and technical writing",
+  "theme": {
+    "primaryColor": "#10B981",
+    "secondaryColor": "#374151",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Blog", "path": "/blog" },
+    { "label": "About", "path": "/about" }
+  ],
+  "social": {
+    "twitter": "@myblog",
+    "github": "myblog"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Hightail",
+  "domain": "hightail.ai",
+  "description": "AI search tracking for local businesses & the agencies that serve them",
+  "tagline": "AI Search Visibility for Local Business",
+  "subheadline": "The only AI visibility platform built for local businesses. Track ChatGPT, Perplexity, Claude, and Google AI Mode with real browser locations — so 'plumber near me' in Seattle actually shows Seattle results.",
+  "theme": {
+    "primaryColor": "#8B5CF6",
+    "secondaryColor": "#A855F7",
+    "accentColor": "#10B981",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Features", "path": "/features" },
+    { "label": "Pricing", "path": "/pricing" },
+    { "label": "Free Audit Tool", "path": "/audit" },
+    { "label": "Resources", "path": "/resources", "dropdown": [
+      { "label": "Blog", "path": "/blog" },
+      { "label": "Case Studies", "path": "/case-studies" },
+      { "label": "Agency Playbook", "path": "/playbook" }
+    ]},
+    { "label": "Login", "path": "/login" }
+  ],
+  "cta": {
+    "primary": "Start Free Trial",
+    "secondary": "Get Free AI Visibility Audit"
+  },
+  "social": {
+    "linkedin": "hightail-ai",
+    "twitter": "@hightail_ai"
+  },
+  "stats": {
+    "agencies": "150+",
+    "businesses": "2,500+",
+    "locations": "12,000+",
+    "engines": "6"
+  }
+}

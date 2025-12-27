@@ -1,0 +1,19 @@
+{
+  "name": "Hightail",
+  "domain": "hightail.ai",
+  "description": "AI-powered search analysis and brand discovery",
+  "theme": {
+    "primaryColor": "#3B82F6",
+    "secondaryColor": "#1E293B",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Blog", "path": "/blog" },
+    { "label": "About", "path": "/about" }
+  ],
+  "social": {
+    "twitter": "@hightail",
+    "github": "hightail"
+  }
+}

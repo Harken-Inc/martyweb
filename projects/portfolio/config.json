@@ -1,0 +1,21 @@
+{
+  "name": "Portfolio",
+  "domain": "portfolio.com", 
+  "description": "Professional portfolio and showcase",
+  "theme": {
+    "primaryColor": "#8B5CF6",
+    "secondaryColor": "#1F2937",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Projects", "path": "/projects" },
+    { "label": "Blog", "path": "/blog" },
+    { "label": "Contact", "path": "/contact" }
+  ],
+  "social": {
+    "twitter": "@portfolio",
+    "github": "portfolio",
+    "linkedin": "portfolio"
+  }
+}
