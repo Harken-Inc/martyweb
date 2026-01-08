@@ -27,33 +27,69 @@ export interface ProjectConfig {
   name: string
   domain: string
   description: string
+  tagline?: string
+  subheadline?: string
   theme: {
     primaryColor: string
     secondaryColor: string
+    accentColor?: string
     fontFamily: string
   }
   navigation: Array<{
     label: string
     path: string
+    dropdown?: Array<{
+      label: string
+      path: string
+    }>
   }>
+  services?: Array<{
+    id: string
+    title: string
+    description: string
+    icon: string
+  }>
+  stats?: Array<{
+    value: string
+    label: string
+  }>
+  approach?: {
+    title: string
+    description: string
+    steps: Array<{
+      id: string
+      title: string
+      description: string
+    }>
+  }
+  contact?: {
+    heading: string
+    subheading: string
+    description: string
+    email: string
+  }
+  cta?: {
+    primary: string
+    secondary: string
+  }
   social: {
     [key: string]: string
   }
 }
 
-export function getProjectConfig(): ProjectConfig {
-  const configPath = path.join(process.cwd(), 'projects', 'hightail', 'config.json')
+export function getProjectConfig(projectName: string = 'hightail'): ProjectConfig {
+  const configPath = path.join(process.cwd(), '..', 'projects', projectName, 'config.json')
   const configContent = fs.readFileSync(configPath, 'utf8')
   return JSON.parse(configContent)
 }
 
-export function getAllPosts(): Post[] {
-  const postsDirectory = path.join(process.cwd(), 'projects', 'hightail', 'content', 'posts')
-  
+export function getAllPosts(projectName: string = 'hightail'): Post[] {
+  const postsDirectory = path.join(process.cwd(), '..', 'projects', projectName, 'content', 'posts')
+
   if (!fs.existsSync(postsDirectory)) {
     return []
   }
-  
+
   const fileNames = fs.readdirSync(postsDirectory)
   const allPosts = fileNames
     .filter(name => name.endsWith('.md'))
@@ -78,9 +114,9 @@ export function getAllPosts(): Post[] {
   return allPosts.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getPostBySlug(slug: string, projectName: string = 'hightail'): Promise<Post | null> {
   try {
-    const fullPath = path.join(process.cwd(), 'projects', 'hightail', 'content', 'posts', `${slug}.md`)
+    const fullPath = path.join(process.cwd(), '..', 'projects', projectName, 'content', 'posts', `${slug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
@@ -103,9 +139,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-export async function getPageBySlug(slug: string): Promise<Page | null> {
+export async function getPageBySlug(slug: string, projectName: string = 'hightail'): Promise<Page | null> {
   try {
-    const fullPath = path.join(process.cwd(), 'projects', 'hightail', 'content', 'pages', `${slug}.md`)
+    const fullPath = path.join(process.cwd(), '..', 'projects', projectName, 'content', 'pages', `${slug}.md`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
 
@@ -123,4 +159,15 @@ export async function getPageBySlug(slug: string): Promise<Page | null> {
   } catch (error) {
     return null
   }
+}
+
+export function getAllProjects(): string[] {
+  const projectsDir = path.join(process.cwd(), '..', 'projects')
+  if (!fs.existsSync(projectsDir)) {
+    return []
+  }
+  return fs.readdirSync(projectsDir).filter(name => {
+    const configPath = path.join(projectsDir, name, 'config.json')
+    return fs.existsSync(configPath)
+  })
 }

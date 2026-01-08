@@ -1,0 +1,85 @@
+{
+  "name": "Vertex",
+  "domain": "vertex.com",
+  "description": "Strategic consulting for accelerated growth",
+  "tagline": "Accelerate Your Growth",
+  "subheadline": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "theme": {
+    "primaryColor": "#000000",
+    "secondaryColor": "#FFFFFF",
+    "accentColor": "#000000",
+    "fontFamily": "Geist"
+  },
+  "navigation": [
+    { "label": "Services", "path": "#services" },
+    { "label": "Approach", "path": "#approach" },
+    { "label": "Contact", "path": "#contact" }
+  ],
+  "services": [
+    {
+      "id": "01",
+      "title": "Strategy",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod.",
+      "icon": "strategy"
+    },
+    {
+      "id": "02",
+      "title": "Analytics",
+      "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua veniam.",
+      "icon": "analytics"
+    },
+    {
+      "id": "03",
+      "title": "Operations",
+      "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "icon": "operations"
+    },
+    {
+      "id": "04",
+      "title": "Transformation",
+      "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "icon": "transformation"
+    }
+  ],
+  "stats": [
+    { "value": "150+", "label": "Projects Delivered" },
+    { "value": "40%", "label": "Avg. Growth Rate" },
+    { "value": "12", "label": "Years Experience" },
+    { "value": "98%", "label": "Client Retention" }
+  ],
+  "approach": {
+    "title": "Systematic Momentum",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Discover",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "id": "02",
+        "title": "Analyze",
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore."
+      },
+      {
+        "id": "03",
+        "title": "Execute",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's build momentum together",
+    "subheading": "Ready to Scale?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
+    "email": "hello@vertex.com"
+  },
+  "cta": {
+    "primary": "Get Started",
+    "secondary": "Start a Project"
+  },
+  "social": {
+    "twitter": "@vertex",
+    "linkedin": "vertex-consulting"
+  }
+}
