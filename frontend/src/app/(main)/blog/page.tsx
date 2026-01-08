@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getAllPosts } from '../../../shared/utils/markdown'
+import { getAllPosts } from '../../../../shared/utils/markdown'
 
 export default function BlogPage() {
   const posts = getAllPosts()

@@ -58,7 +58,7 @@ export default function Navigation() {
               href="/trial"
               className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors"
             >
-              {config.cta.primary}
+              {config.cta?.primary || 'Get Started'}
             </Link>
           </div>
 

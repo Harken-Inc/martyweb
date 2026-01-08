@@ -4,8 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:hightail": "PROJECT_NAME=hightail next dev -p 3000",
+    "dev:vertex": "PROJECT_NAME=vertex next dev -p 3001",
+    "dev:myblog": "PROJECT_NAME=myblog next dev -p 3002",
+    "dev:portfolio": "PROJECT_NAME=portfolio next dev -p 3003",
     "build": "next build",
+    "build:hightail": "PROJECT_NAME=hightail next build",
+    "build:vertex": "PROJECT_NAME=vertex next build",
+    "build:myblog": "PROJECT_NAME=myblog next build",
+    "build:portfolio": "PROJECT_NAME=portfolio next build",
     "start": "next start",
+    "start:hightail": "PROJECT_NAME=hightail next start -p 3000",
+    "start:vertex": "PROJECT_NAME=vertex next start -p 3001",
+    "start:myblog": "PROJECT_NAME=myblog next start -p 3002",
+    "start:portfolio": "PROJECT_NAME=portfolio next start -p 3003",
     "lint": "eslint"
   },
   "dependencies": {

@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { getAllPosts, getProjectConfig } from '../../shared/utils/markdown'
-import BackgroundQueries from '../../shared/components/BackgroundQueries'
+import { getProjectConfig } from '../../../shared/utils/markdown'
+import BackgroundQueries from '../../../shared/components/BackgroundQueries'
 
-export default function Home() {
+export default function HightailHome() {
   const config = getProjectConfig()
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
+      <section className="hero-section bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white relative overflow-hidden">
         {/* Background Icons */}
         <div className="absolute inset-0 overflow-hidden">
           {/* Map pins scattered around */}
@@ -18,23 +18,23 @@ export default function Home() {
           <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-white opacity-10 rounded-full"></div>
           <div className="absolute bottom-20 right-10 w-6 h-6 bg-white opacity-8 rounded-full"></div>
           <div className="absolute top-2/3 left-20 w-4 h-4 bg-white opacity-10 rounded-full"></div>
-          
+
           {/* Search/location icons as simple shapes */}
           <div className="absolute top-16 right-1/4 w-8 h-8 border-2 border-white opacity-8 rounded-lg"></div>
           <div className="absolute bottom-32 left-1/3 w-6 h-6 border border-white opacity-6 rounded-md"></div>
           <div className="absolute top-1/2 left-10 w-10 h-6 border border-white opacity-8 rounded-full"></div>
           <div className="absolute bottom-16 right-1/3 w-12 h-8 border-2 border-white opacity-10 rounded-lg"></div>
-          
+
           {/* Additional scattered elements */}
           <div className="absolute top-24 left-1/3 w-2 h-2 bg-white opacity-15"></div>
           <div className="absolute bottom-1/3 right-16 w-3 h-3 bg-white opacity-12 transform rotate-45"></div>
           <div className="absolute top-40 right-12 w-2 h-8 bg-white opacity-8"></div>
           <div className="absolute bottom-24 left-16 w-8 h-2 bg-white opacity-10"></div>
         </div>
-        
+
         {/* Animated Typing Queries in Background */}
         <BackgroundQueries />
-        
+
         <div className="relative max-w-7xl mx-auto px-4 py-20">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -43,18 +43,18 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-purple-100 mb-8 max-w-4xl mx-auto leading-relaxed">
               {config.subheadline}
             </p>
-            
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link 
+              <Link
                 href="/audit"
-                className="bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="btn-primary bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
-                {config.cta.secondary}
+                {config.cta?.secondary || 'Get Started'}
               </Link>
-              <Link 
+              <Link
                 href="/demo"
-                className="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
                 Watch 2-Min Demo
               </Link>
@@ -90,29 +90,29 @@ export default function Home() {
               AI Search Optimization helps local businesses get recommended by AI engines like ChatGPT, Google AI Mode, and Perplexity when customers ask for services "near me."
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">How It's Different from SEO</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" style={{ backgroundColor: 'var(--color-primary)' }}></div>
                   <span className="text-gray-700"><strong>Traditional SEO</strong> focuses on ranking in Google search results</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" style={{ backgroundColor: 'var(--color-primary)' }}></div>
                   <span className="text-gray-700"><strong>AI Search Optimization</strong> ensures your business gets mentioned when AI answers customer questions</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2" style={{ backgroundColor: 'var(--color-primary)' }}></div>
                   <span className="text-gray-700">AI engines use different sources like <strong>Yelp, reviews, and local directories</strong> — not just websites</span>
                 </div>
               </div>
             </div>
-            
-            <div className="bg-gray-50 rounded-xl p-6">
+
+            <div className="card bg-gray-50 rounded-xl p-6">
               <h4 className="font-bold text-gray-900 mb-4">Example AI Search Query</h4>
-              <div className="bg-white rounded-lg p-4 border-l-4 border-purple-600">
+              <div className="bg-white rounded-lg p-4 border-l-4 border-primary" style={{ borderColor: 'var(--color-primary)' }}>
                 <p className="text-sm text-gray-600 mb-2">Customer asks ChatGPT:</p>
                 <p className="font-medium text-gray-900 mb-3">"What's the best plumber near me for emergency repairs?"</p>
                 <p className="text-sm text-gray-600 mb-2">AI Response includes:</p>
@@ -133,121 +133,17 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-12 text-center">
             <p className="text-lg text-gray-600 mb-6">
               <strong>The opportunity:</strong> Most local businesses aren't optimized for AI search yet. Early movers gain a significant competitive advantage.
             </p>
-            <Link 
+            <Link
               href="/audit"
-              className="bg-slate-800 hover:bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              className="btn-primary bg-slate-800 hover:bg-slate-900 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               Check Your AI Visibility Now →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Proof Bar */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-gray-600 mb-8">
-            Trusted by {config.stats.agencies} agencies managing AI visibility for local businesses
-          </p>
-          
-          {/* Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-6">
-            <div>
-              <div className="text-3xl font-bold text-purple-900">{config.stats.agencies}</div>
-              <div className="text-gray-600">Agencies</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-900">{config.stats.businesses}</div>
-              <div className="text-gray-600">Local Businesses Tracked</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-900">{config.stats.locations}</div>
-              <div className="text-gray-600">Locations Monitored</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-900">{config.stats.engines}</div>
-              <div className="text-gray-600">AI Engines Covered</div>
-            </div>
-          </div>
-          
-          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-800 px-4 py-2 rounded-full">
-            <span className="text-yellow-500">🏆</span>
-            <span className="font-semibold">Built for Local SEO Agencies</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem Section */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Your Clients Are Asking Questions You Can't Answer
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              AI search is sending customers to local businesses every day. But traditional SEO tools can't tell you who's winning.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Problem Card 1 */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl text-purple-600 font-bold">?</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                "Does My Plumber Show Up in ChatGPT?"
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Your clients see their competitors getting recommended by AI engines. They want to know if they're being mentioned too — and you have no way to tell them.
-              </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-sm italic text-gray-700">
-                  "I asked ChatGPT for a plumber in my area and my competitor came up first. Why not me?" — Every local business owner, 2025
-                </p>
-              </div>
-            </div>
-
-            {/* Problem Card 2 */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl text-purple-600 font-bold">⚡</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                "Why Is AI Recommending My Competitor?"
-              </h3>
-              <p className="text-gray-600 mb-4">
-                AI engines don't work like Google. They pull from different sources, weigh different signals, and change constantly. Without visibility into what's being cited, you're optimizing blind.
-              </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-sm italic text-gray-700">
-                  "We rank #1 on Google but ChatGPT doesn't even mention us. What's going on?"
-                </p>
-              </div>
-            </div>
-
-            {/* Problem Card 3 */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-2xl text-purple-600 font-bold">→</span>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                "What Do I Actually Do About It?"
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Generic advice like "create quality content" isn't actionable. Your clients need specific recommendations for their service area, their industry, their competitors.
-              </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-sm italic text-gray-700">
-                  "My SEO agency says they're 'monitoring AI' but they can't show me any data."
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -264,7 +160,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--color-primary)' }}>
                 <span className="text-white text-2xl">📍</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Real Browser Locations</h3>
@@ -272,7 +168,7 @@ export default function Home() {
                 When We Track 'Near Me,' We're Actually There. 91% more accurate than API-based tracking.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">🔗</span>
@@ -282,9 +178,9 @@ export default function Home() {
                 ChatGPT, Claude, Perplexity, Gemini, Google AI Mode, and Bing Copilot. Complete coverage.
               </p>
             </div>
-            
+
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'var(--color-primary)' }}>
                 <span className="text-white text-2xl">🎯</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Built for Service Areas</h3>
@@ -295,9 +191,10 @@ export default function Home() {
           </div>
 
           <div className="mt-12">
-            <Link 
+            <Link
               href="/features"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+              className="btn-primary bg-primary hover:opacity-90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+              style={{ backgroundColor: 'var(--color-primary)' }}
             >
               Explore All Features
             </Link>
@@ -314,8 +211,8 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-12">
             Enter a website to instantly discover how it ranks across AI search engines. Use it in sales calls to show prospects what they're missing.
           </p>
-          
-          <div className="bg-white border-2 border-gray-200 rounded-xl p-8 max-w-2xl mx-auto">
+
+          <div className="card bg-white border-2 border-gray-200 rounded-xl p-8 max-w-2xl mx-auto">
             <div className="space-y-4 mb-6">
               <input
                 type="url"
@@ -340,11 +237,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            
-            <button className="w-full bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors mb-6">
+
+            <button className="btn-primary w-full bg-slate-800 hover:bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors mb-6">
               Get Free Visibility Report
             </button>
-            
+
             <div className="text-left space-y-3 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <span className="text-green-500">✓</span>
@@ -364,7 +261,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <p className="text-gray-500 mt-6">
             Turn cold prospects into warm leads with data they've never seen
           </p>

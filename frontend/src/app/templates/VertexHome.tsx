@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { JSX } from 'react'
 import { getProjectConfig } from '../../../shared/utils/markdown'
 
 // Arrow icon component
@@ -53,8 +54,8 @@ const iconMap: { [key: string]: () => JSX.Element } = {
   transformation: TransformationIcon,
 }
 
-export default function VertexPage() {
-  const config = getProjectConfig('vertex')
+export default function VertexHome() {
+  const config = getProjectConfig()
 
   return (
     <div className="min-h-screen bg-white">
@@ -63,7 +64,7 @@ export default function VertexPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/vertex" className="text-xl font-bold tracking-tight text-black">
+            <Link href="/" className="text-xl font-bold tracking-tight text-black">
               {config.name.toUpperCase()}
             </Link>
 
@@ -83,7 +84,7 @@ export default function VertexPage() {
             {/* CTA Button */}
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 bg-black text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
+              className="btn-primary inline-flex items-center gap-2 bg-black text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
             >
               {config.cta?.primary || 'Get Started'}
               <ArrowUpRight className="w-4 h-4" />
@@ -95,7 +96,7 @@ export default function VertexPage() {
       {/* Main Content */}
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32 px-6 lg:px-8">
+        <section className="hero-section py-20 lg:py-32 px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               {/* Badge */}
@@ -122,14 +123,14 @@ export default function VertexPage() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center gap-2 bg-black text-white font-medium px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+                  className="btn-primary inline-flex items-center gap-2 bg-black text-white font-medium px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
                 >
                   {config.cta?.secondary || 'Start a Project'}
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center gap-2 border border-gray-300 text-black font-medium px-6 py-3 rounded-full hover:border-gray-400 transition-colors"
+                  className="btn-secondary inline-flex items-center gap-2 border border-gray-300 text-black font-medium px-6 py-3 rounded-full hover:border-gray-400 transition-colors"
                 >
                   Explore Services
                 </Link>
@@ -163,11 +164,11 @@ export default function VertexPage() {
                 return (
                   <div
                     key={index}
-                    className="group p-8 border border-gray-200 rounded-2xl hover:border-gray-300 transition-colors cursor-pointer"
+                    className="card service-card group p-8 border border-gray-200 rounded-2xl hover:border-gray-300 transition-colors cursor-pointer"
                   >
                     <div className="flex items-start justify-between mb-8">
                       <IconComponent />
-                      <span className="text-sm text-gray-400">{service.id}</span>
+                      <span className="service-id text-sm text-gray-400">{service.id}</span>
                     </div>
                     <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
                       {service.title}
@@ -186,9 +187,9 @@ export default function VertexPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {config.stats?.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-black mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-500 uppercase tracking-wider">{stat.label}</div>
+                <div key={index} className="stat-item text-center">
+                  <div className="stat-value text-4xl md:text-5xl font-bold text-black mb-2">{stat.value}</div>
+                  <div className="stat-label text-sm text-gray-500 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>

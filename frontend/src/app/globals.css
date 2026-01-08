@@ -3,28 +3,70 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Theme color fallbacks - overridden by inline styles from layout */
+  --color-primary: #3B82F6;
+  --color-secondary: #1E293B;
+  --color-accent: #3B82F6;
+  --font-family-theme: 'Inter';
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: #ffffff;
-  color: #171717;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-theme), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Utility classes using theme colors */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
 }
 
 /* Hero background pattern with map icons */
 .hero-bg-pattern {
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='60' height='60'%3E%3Cg fill='white' fill-opacity='0.08'%3E%3Cpath d='M50 10c-11 0-20 9-20 20 0 15 20 35 20 35s20-20 20-35c0-11-9-20-20-20zm0 25c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z'/%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='40' height='40'%3E%3Cg fill='white' fill-opacity='0.05'%3E%3Ccircle cx='50' cy='35' r='25' fill='none' stroke='white' stroke-width='2'/%3E%3Cpath d='m45 35 5-5 5 5m-10 5h10'/%3E%3C/g%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='50' height='50'%3E%3Cg fill='white' fill-opacity='0.06'%3E%3Crect x='20' y='30' width='60' height='40' rx='5' fill='none' stroke='white' stroke-width='1.5'/%3E%3Cpath d='M30 45h40M30 55h25'/%3E%3C/g%3E%3C/svg%3E");
-  background-position: 
+  background-position:
     0 0,
     30px 40px,
     60px 80px;
@@ -39,7 +81,7 @@ body {
 
 /* Grid pattern overlay */
 .bg-grid-pattern {
-  background-image: 
+  background-image:
     linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 50px 50px;

@@ -1,4 +1,4 @@
-import { getPostBySlug, getAllPosts } from '../../../../shared/utils/markdown'
+import { getPostBySlug, getAllPosts } from '../../../../../shared/utils/markdown'
 import { notFound } from 'next/navigation'
 
 interface Props {

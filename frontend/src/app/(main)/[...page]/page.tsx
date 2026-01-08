@@ -1,4 +1,4 @@
-import { getPageBySlug } from '../../../shared/utils/markdown'
+import { getPageBySlug } from '../../../../shared/utils/markdown'
 import { notFound } from 'next/navigation'
 
 interface Props {
