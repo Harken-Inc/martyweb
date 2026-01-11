@@ -1,0 +1,272 @@
+/* Cakewalk AEO - Custom Styles */
+
+/* Hero section with dark gradient */
+.hero-section {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #1E1B4B 50%, var(--color-primary) 100%);
+  min-height: 80vh;
+}
+
+/* Problem strip - attention-grabbing */
+.problem-strip {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Primary button style */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #818CF8 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Secondary button style */
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Card styling */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* Value prop cards */
+.value-prop-card {
+  background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.value-prop-card h3 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+/* How it works steps */
+.step-number {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+}
+
+.step-connector {
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  margin-left: 1.5rem;
+}
+
+/* Process loop visualization */
+.process-loop {
+  position: relative;
+  padding: 2rem;
+}
+
+.process-loop::after {
+  content: "↻";
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: var(--color-accent);
+  opacity: 0.5;
+}
+
+/* Comparison table */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table th {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.comparison-table .highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.comparison-table .traditional {
+  color: #94A3B8;
+}
+
+/* Self-learning section */
+.self-learning {
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+}
+
+/* Testimonials */
+.testimonial {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.1) 0%, transparent 100%);
+  border-left: 4px solid var(--color-primary);
+  padding: 2rem;
+  border-radius: 0 1rem 1rem 0;
+  font-style: italic;
+}
+
+.testimonial-quote {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Pricing section */
+.pricing-card {
+  background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
+  border: 2px solid var(--color-primary);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.pricing-comparison {
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.pricing-comparison del {
+  color: #94A3B8;
+}
+
+/* FAQ section */
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer {
+  color: #94A3B8;
+}
+
+/* Final CTA section */
+.final-cta {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #4F46E5 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 2rem;
+}
+
+.final-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: #94A3B8;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Stat numbers */
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Opportunity points */
+.opportunity-point {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.opportunity-point::before {
+  content: "✓";
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
