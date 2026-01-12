@@ -7,7 +7,7 @@ export default function LearningMakingHome() {
         className="max-w-[12rem] w-full h-auto"
       />
       <h1
-        className="text-5xl md:text-6xl font-light tracking-wide"
+        className="text-5xl md:text-6xl font-light tracking-wide text-center"
         style={{
           fontFamily: 'Georgia, "Times New Roman", serif',
           color: '#1E3A5F',
@@ -23,7 +23,7 @@ export default function LearningMakingHome() {
           color: '#1E3A5F',
         }}
       >
-        By Loreley Wells
+        Founded by Loreley Wells
       </p>
     </div>
   )
