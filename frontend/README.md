@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## LearningMaking Service
+
+The learningmaking project runs as a systemd service on port 3005.
+
+- URL: `http://localhost:3005`
+- Auto-starts on system boot
+- Auto-restarts on crash
+
+**Service commands:**
+
+```bash
+sudo systemctl status learningmaking    # Check status
+sudo systemctl restart learningmaking   # Restart
+sudo systemctl stop learningmaking      # Stop
+sudo journalctl -u learningmaking -f    # View logs
+```
