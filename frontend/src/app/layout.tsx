@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `${config.name} - ${config.description}`,
     description: config.description,
+    icons: {
+      icon: '/favicon.png',
+    },
   };
 }
 

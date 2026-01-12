@@ -27,7 +27,7 @@ export default async function BlogPost({ params }: Props) {
         <header className="mb-8">
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
           <div className="text-gray-600 mb-4">
-            {post.date} • {post.author}
+            {typeof post.date === 'string' ? post.date : new Date(post.date).toLocaleDateString()} • {post.author}
           </div>
           <div className="flex gap-2 mb-6">
             {post.tags.map((tag) => (

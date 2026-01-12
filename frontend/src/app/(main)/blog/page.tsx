@@ -17,7 +17,7 @@ export default function BlogPage() {
               </Link>
             </h2>
             <div className="text-gray-600 text-sm mb-4">
-              {post.date} • {post.author}
+              {typeof post.date === 'string' ? post.date : new Date(post.date).toLocaleDateString()} • {post.author}
             </div>
             <p className="text-gray-700 mb-4">{post.excerpt}</p>
             <div className="flex gap-2">

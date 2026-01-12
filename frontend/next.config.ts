@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   env: {
@@ -6,6 +7,12 @@ const nextConfig: NextConfig = {
   },
   // Enable standalone output for Docker deployments
   output: "standalone",
+  // Turbopack alias for @projects path
+  turbopack: {
+    resolveAlias: {
+      '@projects': path.resolve(__dirname, './projects'),
+    },
+  },
 };
 
 export default nextConfig;

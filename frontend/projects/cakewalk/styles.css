@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Cakewalk Dark Theme Variables */
+:root {
+  --cw-background: hsl(220 20% 4%);
+  --cw-foreground: hsl(210 40% 98%);
+  --cw-card: hsl(220 20% 7%);
+  --cw-card-foreground: hsl(210 40% 98%);
+  --cw-primary: hsl(195 100% 50%);
+  --cw-primary-foreground: hsl(220 20% 4%);
+  --cw-secondary: hsl(220 15% 12%);
+  --cw-secondary-foreground: hsl(210 40% 98%);
+  --cw-muted: hsl(220 15% 15%);
+  --cw-muted-foreground: hsl(215 20% 55%);
+  --cw-accent: hsl(195 90% 45%);
+  --cw-accent-foreground: hsl(220 20% 4%);
+  --cw-destructive: hsl(0 84.2% 60.2%);
+  --cw-destructive-foreground: hsl(210 40% 98%);
+  --cw-border: hsl(220 15% 18%);
+  --cw-ring: hsl(195 100% 50%);
+  --cw-grid-line: hsl(220 15% 15%);
+}
+
+/* Base styles for cakewalk */
+.bg-background { background-color: var(--cw-background) !important; }
+.bg-foreground { background-color: var(--cw-foreground); }
+.bg-card { background-color: var(--cw-card); }
+.bg-primary { background-color: var(--cw-primary); }
+.bg-secondary { background-color: var(--cw-secondary); }
+.bg-muted { background-color: var(--cw-muted); }
+.bg-accent { background-color: var(--cw-accent); }
+.bg-destructive { background-color: var(--cw-destructive); }
+
+.text-foreground { color: var(--cw-foreground); }
+.text-card-foreground { color: var(--cw-card-foreground); }
+.text-primary { color: var(--cw-primary); }
+.text-primary-foreground { color: var(--cw-primary-foreground); }
+.text-secondary { color: var(--cw-secondary); }
+.text-secondary-foreground { color: var(--cw-secondary-foreground); }
+.text-muted-foreground { color: var(--cw-muted-foreground); }
+.text-accent { color: var(--cw-accent); }
+.text-accent-foreground { color: var(--cw-accent-foreground); }
+.text-destructive { color: var(--cw-destructive); }
+.text-destructive-foreground { color: var(--cw-destructive-foreground); }
+
+.border-border { border-color: var(--cw-border); }
+.border-primary { border-color: var(--cw-primary); }
+.border-input { border-color: var(--cw-border); }
+
+.ring-ring { --tw-ring-color: var(--cw-ring); }
+
+/* Custom utility classes */
+.gradient-text {
+  background: linear-gradient(to right, var(--cw-primary), var(--cw-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-box {
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--cw-primary) 15%, transparent),
+    0 0 40px color-mix(in srgb, var(--cw-primary) 10%, transparent),
+    0 0 60px color-mix(in srgb, var(--cw-primary) 5%, transparent);
+}
+
+.glow-text {
+  text-shadow: 0 0 30px color-mix(in srgb, var(--cw-primary) 50%, transparent);
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, var(--cw-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--cw-grid-line) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  background-color: color-mix(in srgb, var(--cw-card) 50%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cw-border) 50%, transparent);
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, color-mix(in srgb, var(--cw-primary) 5%, transparent), transparent);
+}
+
+/* Animation utilities */
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px var(--cw-primary);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 16px var(--cw-primary);
+  }
+}
+
+.animation-delay-200 { animation-delay: 200ms; }
+.animation-delay-400 { animation-delay: 400ms; }
+.animation-delay-600 { animation-delay: 600ms; }

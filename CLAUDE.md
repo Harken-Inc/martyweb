@@ -6,28 +6,30 @@ This is a Next.js multi-project framework where different "projects" represent d
 ## Project Structure
 ```
 martyweb/
-├── frontend/           # Next.js application
-│   ├── src/app/        # App router pages and templates
-│   └── package.json    # NPM scripts for each project
-├── projects/           # Project configurations and content
-│   └── {projectName}/
-│       ├── config.json
-│       ├── styles.css  # Optional custom styles
-│       └── content/
-│           ├── posts/  # Blog posts (markdown)
-│           └── pages/  # Static pages (markdown)
-└── shared/             # Shared utilities
+└── frontend/           # Next.js application
+    ├── src/app/        # App router pages and templates
+    ├── shared/         # Shared utilities
+    ├── projects/       # Project configurations and content
+    │   └── {projectName}/
+    │       ├── config.json
+    │       ├── Home.tsx    # Optional custom homepage component
+    │       ├── styles.css  # Optional custom styles
+    │       └── content/
+    │           ├── posts/  # Blog posts (markdown)
+    │           └── pages/  # Static pages (markdown)
+    └── package.json    # NPM scripts for each project
 ```
 
 ## Creating a New Project
 
 ### 1. Create Directory Structure
 ```bash
+cd frontend
 mkdir -p projects/{projectname}/content/{posts,pages}
 ```
 
 ### 2. Create config.json
-Create `projects/{projectname}/config.json`:
+Create `frontend/projects/{projectname}/config.json`:
 ```json
 {
   "name": "Project Name",
@@ -76,7 +78,7 @@ cd frontend && npm run dev:{projectname}
 ## Adding Content
 
 ### Blog Posts
-Create markdown files in `projects/{projectname}/content/posts/`:
+Create markdown files in `frontend/projects/{projectname}/content/posts/`:
 ```markdown
 ---
 title: "Post Title"
@@ -91,7 +93,7 @@ Post content here...
 ```
 
 ### Pages
-Create markdown files in `projects/{projectname}/content/pages/`:
+Create markdown files in `frontend/projects/{projectname}/content/pages/`:
 ```markdown
 ---
 title: "Page Title"
@@ -103,10 +105,10 @@ Page content here...
 ## Custom Templates (Optional)
 To create a custom homepage template:
 
-1. Create `frontend/src/app/templates/{ProjectName}Home.tsx`
+1. Create `frontend/projects/{projectname}/Home.tsx`
 2. Register in `frontend/src/app/templates/index.ts`:
 ```typescript
-import ProjectNameHome from './ProjectNameHome'
+import ProjectNameHome from '@projects/{projectname}/Home'
 
 export const templates: Record<string, ComponentType> = {
   // ... existing templates
@@ -117,6 +119,6 @@ export const templates: Record<string, ComponentType> = {
 Projects without custom templates use `DefaultHome`.
 
 ## Key Files
-- `shared/utils/markdown.ts` - Project config loading and markdown parsing
+- `frontend/shared/utils/markdown.ts` - Project config loading and markdown parsing
 - `frontend/src/app/templates/index.ts` - Template registry
 - `frontend/next.config.ts` - Environment variable configuration
