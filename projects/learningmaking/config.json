@@ -1,0 +1,21 @@
+{
+  "name": "Learning Making",
+  "domain": "learningmaking.com",
+  "description": "A space for learning and making things",
+  "tagline": "Learn. Build. Create.",
+  "theme": {
+    "primaryColor": "#F59E0B",
+    "secondaryColor": "#1F2937",
+    "accentColor": "#FBBF24",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Blog", "path": "/blog" },
+    { "label": "About", "path": "/about" }
+  ],
+  "social": {
+    "twitter": "@learningmaking",
+    "github": "learningmaking"
+  }
+}
