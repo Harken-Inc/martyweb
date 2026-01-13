@@ -15,7 +15,7 @@ const terminalLogs = [
   { text: "Checking AI visibility...", type: "normal" },
   { text: "Analyzing keywords...", type: "normal" },
   { text: "Traffic growth for all posts up 12.1%", type: "success" },
-  { text: "Optimizing for ", highlight: "12", suffix: " AI platforms", type: "highlight" },
+  { text: "Optimizing for ", highlight: "Google AI Mode", suffix: "", type: "highlight" },
   { text: "Generating content post #137", type: "success" },
 ];
 

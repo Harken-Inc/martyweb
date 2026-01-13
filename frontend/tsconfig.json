@@ -23,8 +23,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@projects/*": ["./projects/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@projects/*": [
+        "./projects/*"
+      ]
     }
   },
   "include": [
@@ -35,7 +39,9 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "./projects/**/*.ts",
-    "./projects/**/*.tsx"
+    "./projects/**/*.tsx",
+    ".next-cakewalk/types/**/*.ts",
+    ".next-cakewalk/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
