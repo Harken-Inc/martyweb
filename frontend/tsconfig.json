@@ -41,7 +41,9 @@
     "./projects/**/*.ts",
     "./projects/**/*.tsx",
     ".next-cakewalk/types/**/*.ts",
-    ".next-cakewalk/dev/types/**/*.ts"
+    ".next-cakewalk/dev/types/**/*.ts",
+    ".next-learningmaking/types/**/*.ts",
+    ".next-learningmaking/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
