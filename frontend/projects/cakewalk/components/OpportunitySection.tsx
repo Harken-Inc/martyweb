@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { TrendingUp, Zap, Target } from "lucide-react";
+import { TrendingUp, Zap, Target, ExternalLink } from "lucide-react";
 
 const opportunities = [
   {
@@ -21,7 +21,10 @@ const opportunities = [
 const aiModeStats = {
   users: "100M+",
   growth: "357%",
+  customerCitations: "4.2",
+  customerDays: "18",
   description: "Google AI Mode users in the US alone—and AI referral traffic grew 357% YoY",
+  sourceUrl: "https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/",
 };
 
 export const OpportunitySection = () => {
@@ -40,7 +43,7 @@ export const OpportunitySection = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">AI Search Is Wide Open.</span>
             <br />
-            <span className="gradient-text">And Nobody's Optimizing For It.</span>
+            <span className="gradient-text">Early Movers Are Cleaning Up.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Millions now ask ChatGPT, Perplexity, and Gemini instead of Google. When AI answers, it cites sources—and that traffic goes somewhere.
@@ -65,9 +68,22 @@ export const OpportunitySection = () => {
                 <p className="text-3xl md:text-4xl font-bold gradient-text">{aiModeStats.growth}</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">YoY Growth</p>
               </div>
+              <div className="hidden md:block w-px h-12 bg-primary/30" />
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-bold gradient-text">{aiModeStats.customerCitations}</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mt-1">Avg Citations in {aiModeStats.customerDays} Days</p>
+              </div>
             </div>
             <p className="text-sm text-muted-foreground text-center mt-4">
-              {aiModeStats.description}
+              {aiModeStats.description}{" "}
+              <a
+                href={aiModeStats.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-primary hover:underline"
+              >
+                Source <ExternalLink className="w-3 h-3" />
+              </a>
             </p>
           </div>
         </motion.div>

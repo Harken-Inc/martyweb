@@ -14,7 +14,7 @@ export const Footer = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-lg blur-md" style={{ backgroundColor: 'hsl(195 100% 50% / 0.5)' }} />
-              <Image src="/projects/cakewalk/cakewalk.png" alt="Cakewalk" width={20} height={20} className="rounded relative" style={{ filter: 'brightness(0) invert(1)' }} />
+              <img src="/projects/cakewalk/cakewalk-white.png" alt="Cakewalk" width={20} height={20} className="rounded relative" />
             </div>
             <span className="font-semibold text-foreground">Cakewalk</span>
             <span className="text-muted-foreground">AEO</span>

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 export const Navbar = () => {
   return (
@@ -16,7 +15,7 @@ export const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="relative">
               <div className="absolute inset-0 rounded-lg blur-md" style={{ backgroundColor: 'hsl(195 100% 50% / 0.5)' }} />
-              <Image src="/projects/cakewalk/cakewalk.png" alt="Cakewalk" width={20} height={20} className="rounded relative" style={{ filter: 'brightness(0) invert(1)' }} />
+              <img src="/projects/cakewalk/cakewalk-white.png" alt="Cakewalk" width={20} height={20} className="rounded relative" />
             </div>
             <span className="font-semibold text-foreground">Cakewalk</span>
             <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">AEO</span>
