@@ -9,6 +9,14 @@ const faqs = [
     answer: "AEO (Answer Engine Optimization) focuses on getting your content cited by AI platforms like ChatGPT, Perplexity, and Google's AI Mode. While SEO optimizes for traditional search rankings, AEO ensures AI assistants reference your content when answering user questions. The competition is much lower, and a single AI citation can drive more qualified traffic than a page-one Google ranking."
   },
   {
+    question: "Why does Cakewalk do both SEO and AEO?",
+    answer: "SEO is a required foundation for AEO, but the goals and methods differ. Traditional SEO focuses on ranking signals, keywords, and backlinks to climb search results. AEO optimizes for how AI models understand, trust, and cite your content—emphasizing clear answers, authoritative structure, and citation-friendly formatting. We do both because strong SEO builds the domain authority that AI platforms rely on, while AEO-specific techniques ensure you actually get cited. Together, they capture traffic from both traditional search and the rapidly growing AI search channel."
+  },
+  {
+    question: "Is AEO the same as GEO or AI search optimization?",
+    answer: "Yes, they're all the same thing. AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), and AI search optimization are different names for the same practice: optimizing your content to be discovered and cited by AI-powered search tools. The industry is new, so different terms emerged in parallel. We use AEO because it emphasizes the goal—getting your content featured as the answer."
+  },
+  {
     question: "How long does it take to see results?",
     answer: "Most customers see their first AI citations within 2-4 weeks. Unlike traditional SEO which can take 6-12 months, the AEO landscape is new and less competitive. Our agent identifies quick-win opportunities in your niche and creates optimized content immediately. You'll have full visibility into citations and traffic growth through your dashboard."
   },

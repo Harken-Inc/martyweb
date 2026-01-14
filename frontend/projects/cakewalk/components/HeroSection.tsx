@@ -240,7 +240,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              The AI agent that replaces an entire SEO team. Competitor analysis, keyword gaps, AI citations, reputation tracking, content calendars, writing—
+              The AI agent that replaces an entire SEO/AEO team. Competitor analysis, keyword gaps, AI citations, reputation tracking, content calendars, writing—
               <span className="text-foreground font-medium">while you sleep.</span>
             </motion.p>
 
