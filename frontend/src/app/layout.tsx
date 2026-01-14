@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import ProjectStyles from "./ProjectStyles";
 import StructuredData from "./StructuredData";
@@ -95,6 +96,18 @@ export default function RootLayout({
       <head>
         <ProjectStyles />
         <StructuredData />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-45JS8HN09V"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-45JS8HN09V');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
