@@ -1,13 +1,63 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllPosts } from '../../../../shared/utils/markdown'
+import { getAllPosts, getProjectName, getProjectConfig } from '../../../../shared/utils/markdown'
+import { BlogPage as CakewalkBlogPage } from '@projects/cakewalk/components/BlogPage'
 
-export default function BlogPage() {
-  const posts = getAllPosts()
-  
+export const dynamic = 'force-dynamic'
+
+export async function generateMetadata(): Promise<Metadata> {
+  const config = getProjectConfig()
+  const siteUrl = `https://${config.domain}`
+  const projectName = getProjectName()
+
+  const title = `Blog | ${config.name}`
+  const description = `Latest articles and insights from ${config.name} on AI search optimization, content strategy, and growing organic traffic.`
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `${siteUrl}/blog`,
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url: `${siteUrl}/blog`,
+      siteName: config.name,
+      images: [
+        {
+          url: `${siteUrl}/projects/${projectName}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`${siteUrl}/projects/${projectName}/og-image.png`],
+      creator: config.social?.twitter,
+    },
+  }
+}
+
+export default async function BlogPage() {
+  const posts = await getAllPosts()
+  const projectName = getProjectName()
+
+  // Use project-specific blog template if available
+  if (projectName === 'cakewalk') {
+    return <CakewalkBlogPage posts={posts} />
+  }
+
+  // Default blog template
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
-      
+
       <div className="grid gap-8">
         {posts.map((post) => (
           <article key={post.slug} className="border-b border-gray-200 pb-8">

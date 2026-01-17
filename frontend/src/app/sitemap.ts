@@ -17,7 +17,7 @@ function getAllPages(projectName: string): string[] {
     .map(name => name.replace(/\.md$/, ''))
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectName = getProjectName()
   const config = getProjectConfig(projectName)
   const baseUrl = `https://${config.domain}`
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  const posts = getAllPosts(projectName)
+  const posts = await getAllPosts(projectName)
   const blogPages: MetadataRoute.Sitemap = posts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),

@@ -12,14 +12,14 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <div className="relative">
               <div className="absolute inset-0 rounded-lg blur-md" style={{ backgroundColor: 'hsl(195 100% 50% / 0.5)' }} />
               <img src="/projects/cakewalk/cakewalk-glow.png" alt="Cakewalk" width={20} height={20} className="rounded relative" />
             </div>
             <span className="font-semibold text-foreground">Cakewalk</span>
             <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">AEO</span>
-          </div>
+          </a>
 
           {/* Navigation */}
           <div className="flex items-center gap-6">

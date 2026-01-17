@@ -104,3 +104,118 @@
 .animation-delay-200 { animation-delay: 200ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-600 { animation-delay: 600ms; }
+
+/* Cakewalk blog prose styling */
+.cakewalk-prose {
+  color: var(--cw-muted-foreground);
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.cakewalk-prose h1,
+.cakewalk-prose h2,
+.cakewalk-prose h3,
+.cakewalk-prose h4,
+.cakewalk-prose h5,
+.cakewalk-prose h6 {
+  color: var(--cw-foreground);
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.cakewalk-prose > :first-child {
+  margin-top: 0;
+}
+
+.cakewalk-prose h1 { font-size: 2rem; }
+.cakewalk-prose h2 { font-size: 1.5rem; }
+.cakewalk-prose h3 { font-size: 1.25rem; }
+
+.cakewalk-prose p {
+  margin-bottom: 1.25em;
+}
+
+.cakewalk-prose a {
+  color: var(--cw-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cakewalk-prose a:hover {
+  color: var(--cw-accent);
+  text-decoration: underline;
+}
+
+.cakewalk-prose strong {
+  color: var(--cw-foreground);
+  font-weight: 600;
+}
+
+.cakewalk-prose em {
+  font-style: italic;
+}
+
+.cakewalk-prose ul,
+.cakewalk-prose ol {
+  margin-bottom: 1.25em;
+  padding-left: 1.5em;
+}
+
+.cakewalk-prose li {
+  margin-bottom: 0.5em;
+}
+
+.cakewalk-prose ul li {
+  list-style-type: disc;
+}
+
+.cakewalk-prose ol li {
+  list-style-type: decimal;
+}
+
+.cakewalk-prose blockquote {
+  border-left: 3px solid var(--cw-primary);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--cw-muted-foreground);
+}
+
+.cakewalk-prose code {
+  background-color: var(--cw-secondary);
+  color: var(--cw-primary);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+}
+
+.cakewalk-prose pre {
+  background-color: var(--cw-card);
+  border: 1px solid var(--cw-border);
+  border-radius: 0.5rem;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.cakewalk-prose pre code {
+  background: none;
+  padding: 0;
+  color: var(--cw-foreground);
+}
+
+.cakewalk-prose hr {
+  border: none;
+  border-top: 1px solid var(--cw-border);
+  margin: 2em 0;
+}
+
+.cakewalk-prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.5em 0;
+}
