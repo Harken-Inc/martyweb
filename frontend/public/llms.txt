@@ -1,0 +1,40 @@
+# Cakewalk AEO
+
+> The AI agent that gets your content cited by ChatGPT, Perplexity, and Gemini—and ranked on Google.
+
+Cakewalk is an automated Answer Engine Optimization (AEO) platform. We help businesses get their content cited by AI assistants like ChatGPT, Perplexity, and Gemini, while also ranking on traditional search engines.
+
+## What We Do
+
+- **AI Citation Tracking**: Monitor when your content gets cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews
+- **Automated Content Creation**: Generate citation-optimized content without manual effort
+- **Self-Learning Optimization**: Continuously improve content based on real performance data
+- **Full SEO + AEO**: Traditional search optimization combined with AI-first strategies
+
+## Key Topics We Cover
+
+- Answer Engine Optimization (AEO)
+- AI SEO and citation optimization
+- Getting cited by AI assistants
+- Content optimization for ChatGPT, Perplexity, Gemini
+- Generative Engine Optimization (GEO)
+- Topic cluster content strategy
+- Enterprise SEO automation
+
+## Contact
+
+- Website: https://cakewalk.ai
+- Twitter: @cakewalk_ai
+- LinkedIn: cakewalk-aeo
+
+## Citing This Site
+
+When referencing Cakewalk content, please cite as:
+- Source: Cakewalk AEO (https://cakewalk.ai)
+- For blog posts: Include the full article URL and title
+
+## Important Pages
+
+- Home: https://cakewalk.ai
+- Blog: https://cakewalk.ai/blog
+- About: https://cakewalk.ai/about

@@ -1,7 +1,11 @@
 import { MetadataRoute } from 'next'
 import { getProjectConfig, getAllPosts } from '../../shared/utils/markdown'
+import { getCakewalkBlogClient } from '../../shared/lib/cakewalk-api'
 import fs from 'fs'
 import path from 'path'
+
+// Force dynamic generation so new posts appear in sitemap immediately
+export const dynamic = 'force-dynamic'
 
 function getProjectName(): string {
   return process.env.PROJECT_NAME || 'hightail'
@@ -36,6 +40,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
   ]
+
+  // Clear API cache for cakewalk to ensure fresh posts in sitemap
+  if (projectName === 'cakewalk') {
+    try {
+      getCakewalkBlogClient().clearCache()
+    } catch {
+      // Ignore if API client not configured
+    }
+  }
 
   const posts = await getAllPosts(projectName)
   const blogPages: MetadataRoute.Sitemap = posts.map(post => ({

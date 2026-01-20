@@ -160,19 +160,44 @@
 .cakewalk-prose ul,
 .cakewalk-prose ol {
   margin-bottom: 1.25em;
-  padding-left: 1.5em;
+  padding-left: 2em;
+  margin-left: 1em;
+}
+
+.cakewalk-prose ul,
+.cakewalk-prose ul ul,
+.cakewalk-prose ol ul {
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+}
+
+.cakewalk-prose ol,
+.cakewalk-prose ul ol,
+.cakewalk-prose ol ol {
+  list-style-type: decimal !important;
+  list-style-position: outside !important;
 }
 
 .cakewalk-prose li {
   margin-bottom: 0.5em;
+  display: list-item !important;
+  list-style: inherit !important;
 }
 
-.cakewalk-prose ul li {
-  list-style-type: disc;
+.cakewalk-prose ul li,
+.cakewalk-prose ul ul li,
+.cakewalk-prose ol ul li {
+  list-style-type: disc !important;
 }
 
-.cakewalk-prose ol li {
-  list-style-type: decimal;
+.cakewalk-prose ol li,
+.cakewalk-prose ul ol li,
+.cakewalk-prose ol ol li {
+  list-style-type: decimal !important;
+}
+
+.cakewalk-prose li::marker {
+  color: var(--cw-primary);
 }
 
 .cakewalk-prose blockquote {
