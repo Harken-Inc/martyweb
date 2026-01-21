@@ -1,9 +1,43 @@
-import { getPageBySlug, getProjectName } from '../../../../shared/utils/markdown'
+import { Metadata } from 'next'
+import { getPageBySlug, getProjectName, getProjectConfig } from '../../../../shared/utils/markdown'
 import { notFound } from 'next/navigation'
 import { LegalPage as CakewalkLegalPage } from '@projects/cakewalk/components/LegalPage'
 
 interface Props {
   params: Promise<{ page: string[] }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { page } = await params
+  const slug = page[0]
+
+  if (!slug) {
+    return { title: 'Page Not Found' }
+  }
+
+  const pageContent = await getPageBySlug(slug)
+  const config = getProjectConfig()
+  const siteUrl = `https://${config.domain}`
+
+  if (!pageContent) {
+    return { title: 'Page Not Found' }
+  }
+
+  const title = `${pageContent.title} | ${config.name}`
+  const canonicalUrl = `${siteUrl}/${slug}`
+
+  return {
+    title,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      type: 'website',
+      title,
+      url: canonicalUrl,
+      siteName: config.name,
+    },
+  }
 }
 
 export default async function DynamicPage({ params }: Props) {

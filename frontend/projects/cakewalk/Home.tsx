@@ -2,7 +2,6 @@
 
 import { Navbar } from "./components/Navbar"
 import { HeroSection } from "./components/HeroSection"
-import { AIPlatformsSection } from "./components/AIPlatformsSection"
 import { OpportunitySection } from "./components/OpportunitySection"
 import { CapabilitiesSection } from "./components/CapabilitiesSection"
 import { HowItWorksSection } from "./components/HowItWorksSection"
@@ -19,7 +18,6 @@ export default function CakewalkHome() {
       <main className="pt-16">
         <HeroSection />
         <CapabilitiesSection />
-        <AIPlatformsSection />
         <OpportunitySection />
         <HowItWorksSection />
         <ComparisonSection />
