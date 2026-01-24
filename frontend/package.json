@@ -24,6 +24,7 @@
     "start:portfolio": "PROJECT_NAME=portfolio next start -p 3003",
     "start:cakewalk": "PROJECT_NAME=cakewalk next start -p 3004",
     "start:learningmaking": "PROJECT_NAME=learningmaking next start -p 3005",
+    "restart:cakewalk": "kill -9 $(lsof -ti:3004) 2>/dev/null; npm run build:cakewalk && npm run start:cakewalk",
     "lint": "eslint"
   },
   "dependencies": {

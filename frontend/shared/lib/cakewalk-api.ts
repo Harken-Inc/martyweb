@@ -34,6 +34,16 @@ export interface Post {
   updated_at: string | null
   // Author object
   author: Author | null
+  // Structured data for schema markup
+  schema_data?: {
+    article_type?: string
+    word_count?: number
+    reading_time_minutes?: number
+    last_modified?: string
+    breadcrumbs?: Array<{ name: string; url: string }>
+    how_to_steps?: Array<{ name: string; text: string; image?: string }>
+    related_articles?: Array<{ title: string; url: string }>
+  }
 }
 
 export interface PostsResponse {
@@ -162,6 +172,14 @@ export class BlogClient {
   clearCache(): void {
     this.cache.clear()
   }
+
+  getCacheSize(): number {
+    return this.cache.size
+  }
+
+  getCacheKeys(): string[] {
+    return Array.from(this.cache.keys())
+  }
 }
 
 // Singleton instance for cakewalk project
@@ -172,6 +190,7 @@ export function getCakewalkBlogClient(): BlogClient {
     const apiKey = process.env.CAKEWALK_API_KEY
     const projectId = process.env.CAKEWALK_PROJECT_ID
     const baseUrl = process.env.CAKEWALK_API_URL
+    const isDevelopment = process.env.NODE_ENV === 'development'
 
     if (!apiKey || !projectId) {
       throw new Error('CAKEWALK_API_KEY and CAKEWALK_PROJECT_ID environment variables are required')
@@ -182,8 +201,18 @@ export function getCakewalkBlogClient(): BlogClient {
       projectId,
       options: {
         baseUrl: baseUrl || 'https://api.cakewalk.ai',
+        // Shorter cache in development for faster iteration
+        cacheTtl: isDevelopment ? 10 : 300,
       },
     })
   }
   return clientInstance
+}
+
+// Helper to reset the client instance (useful for development/testing)
+export function resetCakewalkBlogClient(): void {
+  if (clientInstance) {
+    clientInstance.clearCache()
+    clientInstance = null
+  }
 }

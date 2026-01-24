@@ -5,6 +5,7 @@ import { HeroSection } from "./components/HeroSection"
 import { OpportunitySection } from "./components/OpportunitySection"
 import { CapabilitiesSection } from "./components/CapabilitiesSection"
 import { HowItWorksSection } from "./components/HowItWorksSection"
+import { ContentQualitySection } from "./components/ContentQualitySection"
 import { ComparisonSection } from "./components/ComparisonSection"
 import { FAQSection } from "./components/FAQSection"
 import { CTASection } from "./components/CTASection"
@@ -20,6 +21,7 @@ export default function CakewalkHome() {
         <CapabilitiesSection />
         <OpportunitySection />
         <HowItWorksSection />
+        <ContentQualitySection />
         <ComparisonSection />
         <FAQSection />
         <CTASection />

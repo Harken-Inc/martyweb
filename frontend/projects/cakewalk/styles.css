@@ -244,3 +244,90 @@
   border-radius: 0.5rem;
   margin: 1.5em 0;
 }
+
+.cakewalk-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  display: block;
+}
+
+.cakewalk-prose thead {
+  background-color: var(--cw-secondary);
+}
+
+.cakewalk-prose th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--cw-foreground);
+  border-bottom: 2px solid var(--cw-border);
+}
+
+.cakewalk-prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--cw-border);
+  color: var(--cw-muted-foreground);
+}
+
+.cakewalk-prose tbody tr:hover {
+  background-color: var(--cw-muted);
+}
+
+.cakewalk-prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .cakewalk-prose table {
+    font-size: 0.8125rem;
+  }
+
+  .cakewalk-prose th,
+  .cakewalk-prose td {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* FAQ Section Styling */
+.cakewalk-prose h2:nth-of-type(n+2) {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid var(--cw-border);
+}
+
+/* FAQ Item Card */
+.cakewalk-prose p.faq-item {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--cw-card) 40%, transparent),
+    color-mix(in srgb, var(--cw-secondary) 30%, transparent)
+  );
+  border-left: 4px solid var(--cw-primary);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.cakewalk-prose p.faq-item:hover {
+  border-left-color: var(--cw-accent);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--cw-card) 50%, transparent),
+    color-mix(in srgb, var(--cw-secondary) 40%, transparent)
+  );
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--cw-primary) 10%, transparent);
+}
+
+/* FAQ Question (strong element inside FAQ item) */
+.cakewalk-prose p.faq-item strong:first-child {
+  display: block;
+  color: var(--cw-foreground);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  line-height: 1.4;
+}
