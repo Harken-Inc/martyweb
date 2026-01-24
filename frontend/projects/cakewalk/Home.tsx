@@ -6,7 +6,7 @@ import { OpportunitySection } from "./components/OpportunitySection"
 import { CapabilitiesSection } from "./components/CapabilitiesSection"
 import { HowItWorksSection } from "./components/HowItWorksSection"
 import { ContentQualitySection } from "./components/ContentQualitySection"
-import { ComparisonSection } from "./components/ComparisonSection"
+import { ContentTypesSection } from "./components/ContentTypesSection"
 import { FAQSection } from "./components/FAQSection"
 import { CTASection } from "./components/CTASection"
 import { Footer } from "./components/Footer"
@@ -22,7 +22,7 @@ export default function CakewalkHome() {
         <OpportunitySection />
         <HowItWorksSection />
         <ContentQualitySection />
-        <ComparisonSection />
+        <ContentTypesSection />
         <FAQSection />
         <CTASection />
       </main>
