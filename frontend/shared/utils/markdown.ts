@@ -49,6 +49,57 @@ function convertAsterisksToLists(html: string): string {
   return result.join('\n')
 }
 
+// Convert inline numbered lists to proper HTML ordered lists
+// Matches patterns like "1. First item 2. Second item 3. Third item"
+function convertInlineNumberedLists(html: string): string {
+  // Pattern to find inline numbered lists: "1. Text 2. Text 3. Text"
+  // Look for sequences of "number. text" that appear inline (not at line start)
+  const inlineListPattern = /(\d+)\.\s+([^0-9]+?)(?=\s+\d+\.\s|$)/g
+
+  // Process each paragraph that might contain inline numbered lists
+  return html.replace(/<p>([^<]*\d+\.\s+[^<]+)<\/p>/g, (match, content) => {
+    // Check if this looks like an inline numbered list (has multiple numbered items)
+    const items: string[] = []
+    let lastIndex = 0
+    let foundItems = 0
+
+    // Match numbered items like "1. Day 1: content" or "2. Day 2: content"
+    const itemPattern = /(\d+)\.\s+/g
+    let itemMatch
+    const positions: { index: number; number: string }[] = []
+
+    while ((itemMatch = itemPattern.exec(content)) !== null) {
+      positions.push({ index: itemMatch.index, number: itemMatch[1] })
+    }
+
+    // Need at least 2 numbered items to consider it a list
+    if (positions.length < 2) {
+      return match
+    }
+
+    // Extract text between numbered markers
+    for (let i = 0; i < positions.length; i++) {
+      const start = positions[i].index + positions[i].number.length + 2 // Skip "N. "
+      const end = i < positions.length - 1 ? positions[i + 1].index : content.length
+      const itemText = content.substring(start, end).trim()
+      if (itemText) {
+        items.push(itemText)
+      }
+    }
+
+    if (items.length >= 2) {
+      // Get any text before the first number
+      const prefixText = content.substring(0, positions[0].index).trim()
+      const prefix = prefixText ? `<p>${prefixText}</p>\n` : ''
+
+      const listItems = items.map(item => `<li>${item}</li>`).join('\n')
+      return `${prefix}<ol>\n${listItems}\n</ol>`
+    }
+
+    return match
+  })
+}
+
 // Enhance FAQ sections with better markup
 function enhanceFAQSections(html: string): string {
   let processed = html
@@ -197,8 +248,9 @@ function convertCakewalkPost(post: CakewalkPost): Post {
     }
   }
 
-  // Process the HTML content to convert asterisk lists to proper HTML lists
+  // Process the HTML content to convert lists to proper HTML
   let processedContent = convertAsterisksToLists(post.body_html || '')
+  processedContent = convertInlineNumberedLists(processedContent)
   // Note: FAQ styling is now handled purely via CSS, no HTML transformation needed
 
   // Map schema_data if available
