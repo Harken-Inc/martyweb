@@ -54,12 +54,12 @@ const comparisonPoints = [
   },
   {
     metric: "Consistency",
-    human: "Depends on the writer",
+    human: "Variable by process",
     cakewalk: "Reliably consistent",
   },
   {
     metric: "Scalability",
-    human: "Limited by capacity",
+    human: "Constrained by bandwidth",
     cakewalk: "Unlimited volume",
   },
   {
@@ -202,7 +202,7 @@ export const ContentQualitySection = () => {
                       Metric
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-medium text-muted-foreground">
-                      Human Writers
+                      Traditional Approach
                     </th>
                     <th className="px-6 py-4 text-left text-sm font-medium text-emerald-400">
                       Cakewalk

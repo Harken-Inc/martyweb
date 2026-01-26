@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Do I need any technical knowledge to use Cakewalk?",
-    answer: "Not at all. Setup takes about 2 minutes—just connect your website and analytics. The agent handles everything automatically: research, content creation, publishing, and optimization. You can be as hands-on or hands-off as you like, with full control over approval workflows if you want to review content before it goes live."
+    answer: "Not at all. Setup takes about 2 minutes—just connect your website and analytics. The agent handles everything automatically—or works alongside your existing workflow if you prefer more control. You can be as hands-on or hands-off as you like, with full control over approval workflows if you want to review content before it goes live."
   },
   {
     question: "What kind of content does the agent create?",
@@ -41,8 +41,8 @@ const faqs = [
     answer: "Cakewalk works for any industry where people search for information online. Whether you're in B2B software, e-commerce, professional services, health and wellness, finance, or any other sector, the agent adapts to your specific market. It researches your competitors, identifies gaps, and creates content tailored to your audience's questions."
   },
   {
-    question: "Does Cakewalk replace my existing SEO efforts?",
-    answer: "Cakewalk handles both AEO and traditional SEO, so it can replace or complement your existing efforts. The content we create is optimized for Google rankings as well as AI citations. Many customers use Cakewalk as their primary content engine, while others run it alongside existing SEO programs to capture the new AI search opportunity."
+    question: "Does Cakewalk integrate with my existing SEO efforts?",
+    answer: "Cakewalk handles both AEO and traditional SEO, so it can complement or fully handle your existing efforts—your choice. The content we create is optimized for Google rankings as well as AI citations. Many customers use Cakewalk as their primary content engine, while others run it alongside existing SEO programs to capture the new AI search opportunity."
   },
   {
     question: "Can I review content before it's published?",
