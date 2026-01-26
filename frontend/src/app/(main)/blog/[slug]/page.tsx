@@ -112,10 +112,10 @@ export default async function BlogPost({ params }: Props) {
     ],
   }
 
-  // Article structured data for SEO
+  // BlogPosting structured data for SEO
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt,
     image: imageUrl,

@@ -1,10 +1,5 @@
 import { getProjectConfig } from '../../shared/utils/markdown'
 
-interface FAQItem {
-  question: string
-  answer: string
-}
-
 export default function StructuredData() {
   const config = getProjectConfig()
   const siteUrl = `https://${config.domain}`
@@ -23,20 +18,6 @@ export default function StructuredData() {
     ].filter(Boolean),
   }
 
-  // FAQ Schema (if FAQ exists in config)
-  const faqSchema = config.faq && config.faq.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: config.faq.map((item: FAQItem) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  } : null
-
   // WebSite Schema for sitelinks search
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -44,6 +25,9 @@ export default function StructuredData() {
     name: config.name,
     url: siteUrl,
   }
+
+  // Note: Site-wide FAQ schema removed - FAQPage should only be included on
+  // pages where the FAQ content actually appears (homepage, blog posts with FAQs)
 
   return (
     <>
@@ -55,12 +39,6 @@ export default function StructuredData() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
     </>
   )
 }

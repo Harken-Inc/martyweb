@@ -38,7 +38,7 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-sm text-muted-foreground"
           >
-            © 2025 Cakewalk. All rights reserved.
+            © {new Date().getFullYear()} Cakewalk. All rights reserved.
           </motion.p>
         </div>
       </div>
