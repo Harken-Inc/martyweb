@@ -100,30 +100,6 @@ function convertInlineNumberedLists(html: string): string {
   })
 }
 
-// Add /blog/ prefix to internal links in HTML content
-function prefixInternalLinks(html: string): string {
-  // Match href attributes that are relative slugs (not starting with /, http, https, mailto, #, or tel)
-  // These are likely blog post slugs that need the /blog/ prefix
-  return html.replace(
-    /href="([^"]+)"/g,
-    (match, url) => {
-      // Skip external URLs, absolute paths, anchors, mailto, and tel links
-      if (
-        url.startsWith('http://') ||
-        url.startsWith('https://') ||
-        url.startsWith('/') ||
-        url.startsWith('#') ||
-        url.startsWith('mailto:') ||
-        url.startsWith('tel:')
-      ) {
-        return match
-      }
-      // Add /blog/ prefix to relative slugs
-      return `href="/blog/${url}"`
-    }
-  )
-}
-
 // Enhance FAQ sections with better markup
 function enhanceFAQSections(html: string): string {
   let processed = html
@@ -275,8 +251,6 @@ function convertCakewalkPost(post: CakewalkPost): Post {
   // Process the HTML content to convert lists to proper HTML
   let processedContent = convertAsterisksToLists(post.body_html || '')
   processedContent = convertInlineNumberedLists(processedContent)
-  // Add /blog/ prefix to internal links (API returns relative slugs)
-  processedContent = prefixInternalLinks(processedContent)
   // Note: FAQ styling is now handled purely via CSS, no HTML transformation needed
 
   // Helper to prefix relative URLs with /blog/

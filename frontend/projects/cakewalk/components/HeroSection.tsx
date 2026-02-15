@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { AnimatedGrid } from "./AnimatedGrid";
-import { ArrowRight } from "lucide-react";
+import { CTAButton } from "./CTAButton";
 import { useEffect, useState } from "react";
 
 const terminalLogs = [
@@ -251,12 +250,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.7, duration: 0.8 }}
               className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
-              <a href="https://cal.com/martin-wells-plxzqv" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="glow" className="group">
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
+              <CTAButton />
             </motion.div>
 
             {/* Trust indicators */}

@@ -233,5 +233,23 @@
     "description": "The shift to AI search is happening now. Early movers will own their categories.",
     "button": "Start Your Free Trial",
     "subtext": "No credit card required. See results in weeks."
+  },
+  "llms": {
+    "about": "Cakewalk is an automated Answer Engine Optimization (AEO) platform. We help businesses get their content cited by AI assistants like ChatGPT, Perplexity, and Gemini, while also ranking on traditional search engines.",
+    "whatWeDo": [
+      { "title": "AI Citation Tracking", "description": "Monitor when your content gets cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews" },
+      { "title": "Automated Content Creation", "description": "Generate citation-optimized content without manual effort" },
+      { "title": "Self-Learning Optimization", "description": "Continuously improve content based on real performance data" },
+      { "title": "Full SEO + AEO", "description": "Traditional search optimization combined with AI-first strategies" }
+    ],
+    "topics": [
+      "Answer Engine Optimization (AEO)",
+      "AI SEO and citation optimization",
+      "Getting cited by AI assistants",
+      "Content optimization for ChatGPT, Perplexity, Gemini",
+      "Generative Engine Optimization (GEO)",
+      "Topic cluster content strategy",
+      "Enterprise SEO automation"
+    ]
   }
 }

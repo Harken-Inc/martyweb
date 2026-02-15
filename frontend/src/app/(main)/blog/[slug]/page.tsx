@@ -75,6 +75,7 @@ export async function generateStaticParams() {
 export default async function BlogPost({ params }: Props) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
+  const allPosts = await getAllPosts()
   const projectName = getProjectName()
   const config = getProjectConfig()
   const siteUrl = `https://${config.domain}`
@@ -82,6 +83,23 @@ export default async function BlogPost({ params }: Props) {
   if (!post) {
     notFound()
   }
+
+  // Find related posts based on shared tags, excluding current post
+  const relatedPosts = allPosts
+    .filter(p => p.slug !== slug)
+    .map(p => ({
+      ...p,
+      sharedTags: p.tags.filter(tag => post.tags.includes(tag)).length
+    }))
+    .sort((a, b) => {
+      // Sort by shared tags first, then by date
+      if (b.sharedTags !== a.sharedTags) {
+        return b.sharedTags - a.sharedTags
+      }
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    })
+    .slice(0, 3)
+    .map(({ sharedTags, ...p }) => p)
 
   const canonicalUrl = `${siteUrl}/blog/${slug}`
   const imageUrl = post.featuredImage || `${siteUrl}/projects/${projectName}/og-image.png`
@@ -194,7 +212,7 @@ export default async function BlogPost({ params }: Props) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
         />
-        <CakewalkBlogPostPage post={post} />
+        <CakewalkBlogPostPage post={post} relatedPosts={relatedPosts} />
       </>
     )
   }

@@ -46,9 +46,11 @@ Cakewalk combines several AI systems working together:
 
 The longer you run Cakewalk, the smarter it gets.
 
-## The Team
+## About the Founder
 
-We're a team of AI researchers, SEO veterans, and automation engineers who saw the shift to AI search coming. We built Cakewalk because we wanted to use it ourselves—and now we're sharing it with businesses ready to move early.
+Cakewalk was built by [Martin Wells](https://linkedin.com/in/martinjwells), a software engineer and entrepreneur who saw the shift to AI search early and built the tools to capitalize on it. Martin has spent years at the intersection of AI, search, and automation—and built Cakewalk to solve the problem he kept running into: great businesses getting zero visibility in AI-powered search.
+
+Find Martin on [Twitter](https://twitter.com/martinjwells) and [LinkedIn](https://linkedin.com/in/martinjwells).
 
 ---
 

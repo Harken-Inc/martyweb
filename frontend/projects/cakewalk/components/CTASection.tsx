@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import { CTAButton } from "./CTAButton";
 
 export const CTASection = () => {
   const ref = useRef(null);
@@ -51,12 +51,7 @@ export const CTASection = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-col items-center gap-4"
           >
-            <a href="https://cal.com/martin-wells-plxzqv" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" variant="glow" className="group text-lg px-8 py-6">
-                Book a Demo
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
+            <CTAButton className="text-lg px-8 py-6" />
             <p className="text-sm text-muted-foreground">
               No credit card required. See results in weeks.
             </p>

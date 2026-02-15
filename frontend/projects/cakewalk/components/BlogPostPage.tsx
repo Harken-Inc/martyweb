@@ -5,7 +5,8 @@ import Link from "next/link"
 import { Navbar } from "./Navbar"
 import { Footer } from "./Footer"
 import { AnimatedGrid } from "./AnimatedGrid"
-import { ArrowLeft, Calendar, User, Clock } from "lucide-react"
+import { CTAButton } from "./CTAButton"
+import { ChevronRight, Calendar, User, Clock, Home } from "lucide-react"
 import "../styles.css"
 
 interface Post {
@@ -34,11 +35,20 @@ interface Post {
   }
 }
 
-interface BlogPostPageProps {
-  post: Post
+interface RelatedPost {
+  slug: string
+  title: string
+  date: string
+  excerpt: string
+  tags: string[]
 }
 
-export function BlogPostPage({ post }: BlogPostPageProps) {
+interface BlogPostPageProps {
+  post: Post
+  relatedPosts?: RelatedPost[]
+}
+
+export function BlogPostPage({ post, relatedPosts = [] }: BlogPostPageProps) {
   // Note: Schema markup (BlogPosting, BreadcrumbList, FAQPage, Speakable) is now
   // handled by the parent page.tsx to avoid duplication
 
@@ -51,20 +61,41 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
 
           <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
             <article className="max-w-3xl mx-auto">
-              {/* Back link */}
-              <motion.div
+              {/* Breadcrumb navigation */}
+              <motion.nav
+                aria-label="Breadcrumb"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
+                className="mb-6"
               >
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  Back to Blog
-                </Link>
-              </motion.div>
+                <ol className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <li>
+                    <Link
+                      href="/"
+                      className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+                    >
+                      <Home className="w-3.5 h-3.5" />
+                      <span>Home</span>
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <ChevronRight className="w-4 h-4 mx-1 text-muted-foreground/50" />
+                    <Link
+                      href="/blog"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li className="flex items-center">
+                    <ChevronRight className="w-4 h-4 mx-1 text-muted-foreground/50" />
+                    <span className="text-foreground/80 truncate max-w-[200px] md:max-w-[300px]" aria-current="page">
+                      {post.title}
+                    </span>
+                  </li>
+                </ol>
+              </motion.nav>
 
               {/* Header */}
               <motion.header
@@ -183,28 +214,44 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                 </section>
               )}
 
-              {/* Related Articles Section */}
-              {post.schemaData?.relatedArticles && post.schemaData.relatedArticles.length > 0 && (
-                <section aria-label="Related articles" className="mt-12">
+              {/* Read Next Section */}
+              {relatedPosts.length > 0 && (
+                <section aria-label="Read next" className="mt-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.35 }}
                   >
                     <h2 className="text-2xl font-bold text-foreground mb-6">
-                      Related Articles
+                      Read Next
                     </h2>
                     <div className="grid gap-4">
-                      {post.schemaData.relatedArticles.map((article, index) => (
-                        <a
-                          key={index}
-                          href={article.url}
+                      {relatedPosts.map((relatedPost) => (
+                        <Link
+                          key={relatedPost.slug}
+                          href={`/blog/${relatedPost.slug}`}
                           className="glass-card rounded-xl p-5 border border-primary/20 hover:border-primary/40 transition-all group"
                         >
-                          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                            {article.title}
+                          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                            {relatedPost.title}
                           </h3>
-                        </a>
+                          <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                            {relatedPost.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <time className="text-xs text-muted-foreground/70">
+                              {new Date(relatedPost.date).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </time>
+                            <span className="text-primary text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
+                              Read more
+                              <ArrowRight className="w-4 h-4" />
+                            </span>
+                          </div>
+                        </Link>
                       ))}
                     </div>
                   </motion.div>
@@ -225,17 +272,7 @@ export function BlogPostPage({ post }: BlogPostPageProps) {
                   <p className="text-muted-foreground mb-6">
                     See how Cakewalk can get your content cited by AI search engines.
                   </p>
-                  <a
-                    href="https://cal.com/martin-wells-plxzqv"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-                    style={{
-                      boxShadow: '0 0 20px hsl(195 100% 50% / 0.3), 0 0 40px hsl(195 100% 50% / 0.1)'
-                    }}
-                  >
-                    Book a Demo
-                  </a>
+                  <CTAButton />
                 </motion.div>
               </section>
             </article>

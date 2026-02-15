@@ -1,5 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "./CTAButton";
+
+const getAppUrl = () => {
+  return process.env.NODE_ENV === "development"
+    ? "http://localhost:5173"
+    : "https://app.cakewalk.ai";
+};
 
 export const Navbar = () => {
   return (
@@ -26,11 +34,10 @@ export const Navbar = () => {
             <a href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Blog
             </a>
-            <a href="https://cal.com/martin-wells-plxzqv" target="_blank" rel="noopener noreferrer">
-              <Button variant="glow" size="sm">
-                Book a Demo
-              </Button>
+            <a href={`${getAppUrl()}/login`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Login
             </a>
+            <CTAButton size="sm" />
           </div>
         </div>
       </div>

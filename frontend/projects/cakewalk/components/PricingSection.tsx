@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import { CTAButton } from "./CTAButton";
 
 export const PricingSection = () => {
   const ref = useRef(null);
@@ -48,20 +48,7 @@ export const PricingSection = () => {
               Find out how visible your brand is to AI assistants—and what you can do to improve it.
             </p>
 
-            <a
-              href="https://cal.com/martin-wells-plxzqv"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                className="group text-lg px-8 py-6"
-                variant="glow"
-                size="lg"
-              >
-                See How AI Sees Your Brand
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </a>
+            <CTAButton className="text-lg px-8 py-6" />
 
             <p className="text-sm text-muted-foreground mt-6">
               Billed annually. Cancel anytime.

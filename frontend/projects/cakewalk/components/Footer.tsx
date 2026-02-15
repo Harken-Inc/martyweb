@@ -28,6 +28,7 @@ export const Footer = () => {
           >
             <a href="/blog" className="hover:text-primary transition-colors">Blog</a>
             <a href="/about" className="hover:text-primary transition-colors">About</a>
+            <a href="https://app.cakewalk.ai/tools/prompt-checker" className="hover:text-primary transition-colors">Prompt Checker</a>
             <a href="/privacy" className="hover:text-primary transition-colors">Privacy</a>
             <a href="/terms" className="hover:text-primary transition-colors">Terms</a>
           </motion.div>
