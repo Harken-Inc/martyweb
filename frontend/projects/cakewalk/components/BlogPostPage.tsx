@@ -6,7 +6,7 @@ import { Navbar } from "./Navbar"
 import { Footer } from "./Footer"
 import { AnimatedGrid } from "./AnimatedGrid"
 import { CTAButton } from "./CTAButton"
-import { ChevronRight, Calendar, User, Clock, Home } from "lucide-react"
+import { ChevronRight, Calendar, User, Clock, Home, ArrowRight } from "lucide-react"
 import "../styles.css"
 
 interface Post {

@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
     PROJECT_NAME: projectName,
     CAKEWALK_API_KEY: process.env.CAKEWALK_API_KEY,
     CAKEWALK_PROJECT_ID: process.env.CAKEWALK_PROJECT_ID,
+    CAKEWALK_API_URL: process.env.CAKEWALK_API_URL,
   },
   // Use separate build directories per project to allow running multiple simultaneously
   distDir: `.next-${projectName}`,
