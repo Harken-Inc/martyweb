@@ -151,7 +151,7 @@ const TerminalLog = () => {
   };
 
   return (
-    <div className="glass-card rounded-xl p-4 md:p-6 font-mono text-sm border border-primary/20 backdrop-blur-sm overflow-hidden" style={{ backgroundColor: 'hsl(220 20% 4% / 0.8)' }}>
+    <div className="glass-card rounded-xl p-4 md:p-6 font-mono text-sm border border-primary/20 backdrop-blur-sm overflow-hidden text-left" style={{ backgroundColor: 'hsl(220 20% 4% / 0.8)' }}>
       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-primary/10">
         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
         <span className="text-xs text-muted-foreground">cakewalk-agent</span>
@@ -239,7 +239,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              Whether you're a team of one or twenty, the AI agent that does the work of an entire SEO/AEO team. Competitor analysis, keyword gaps, AI citations, reputation tracking, content calendars, writing—
+              An AI agent that does the work of an entire SEO/AEO team—whether you're a team of one or twenty. Competitor analysis, keyword gaps, AI citations, reputation tracking, content calendars, writing—
               <span className="text-foreground font-medium">while you sleep.</span>
             </motion.p>
 

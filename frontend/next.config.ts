@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
   distDir: `.next-${projectName}`,
   // Enable standalone output for Docker deployments
   output: "standalone",
+  // Transpile framer-motion to fix Turbopack module resolution
+  transpilePackages: ["framer-motion"],
   // Turbopack alias for @projects path
   turbopack: {
     resolveAlias: {
