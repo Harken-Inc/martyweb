@@ -1,5 +1,5 @@
 /**
- * Cakewalk AEO Blog API Client
+ * Cakewalk AI Blog API Client
  * Based on https://github.com/Cakewalk-ai/api
  */
 

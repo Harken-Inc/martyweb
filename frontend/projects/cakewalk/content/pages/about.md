@@ -1,9 +1,9 @@
 ---
-title: About Cakewalk AEO
+title: About Cakewalk AI
 description: Learn about the AI agent that automates traffic growth through AI search optimization
 ---
 
-# About Cakewalk AEO
+# About Cakewalk AI
 
 ## The Future of Search Is Here
 
@@ -23,17 +23,17 @@ Cakewalk is an AI agent that handles your entire content and SEO workflow automa
 
 No content calendars. No writer management. No SEO consultants. Just traffic that grows while you focus on your business.
 
-## Why AEO (AI Engine Optimization)?
+## Why AI Search Optimization?
 
 Traditional SEO is a grind. You're competing against millions of pages, waiting 6-12 months for results, and constantly managing content production.
 
-AI Engine Optimization is different:
+AI search optimization is different:
 
 - **Almost no competition** — most businesses haven't figured this out yet
 - **Fast results** — weeks, not months
 - **Higher impact** — one AI citation can outperform being on page one of Google
 
-We built the first platform that handles AEO end-to-end, automatically.
+We built the first platform that handles AI search optimization end-to-end, automatically.
 
 ## Our Technology
 

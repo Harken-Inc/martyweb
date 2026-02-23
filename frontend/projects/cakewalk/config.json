@@ -27,8 +27,8 @@
     "secondary": "See It In Action"
   },
   "social": {
-    "twitter": "@cakewalkAEO",
-    "linkedin": "cakewalk-aeo"
+    "twitter": "@cakewalkAI",
+    "linkedin": "cakewalk-ai"
   },
   "hero": {
     "headline": "Traffic to Your Site. On Autopilot.",
@@ -105,7 +105,7 @@
     "footer": "Then it loops. Forever."
   },
   "comparison": {
-    "headline": "Why AEO Is Faster",
+    "headline": "Why AI Search Is Faster",
     "subheadline": "Weeks to Results. Not Months.",
     "rows": [
       {
@@ -129,7 +129,7 @@
         "cakewalk": "Set and forget"
       }
     ],
-    "footer": "SEO still matters—we do that too. But AEO is where the fast wins are."
+    "footer": "SEO still matters—we do that too. But AI search is where the fast wins are."
   },
   "selfLearning": {
     "headline": "Gets Smarter Every Day. Without You.",
@@ -235,15 +235,15 @@
     "subtext": "No credit card required. See results in weeks."
   },
   "llms": {
-    "about": "Cakewalk is an automated Answer Engine Optimization (AEO) platform. We help businesses get their content cited by AI assistants like ChatGPT, Perplexity, and Gemini, while also ranking on traditional search engines.",
+    "about": "Cakewalk AI is an automated AI search optimization platform. We help businesses get their content cited by AI assistants like ChatGPT, Perplexity, and Gemini, while also ranking on traditional search engines.",
     "whatWeDo": [
       { "title": "AI Citation Tracking", "description": "Monitor when your content gets cited by ChatGPT, Perplexity, Gemini, and Google AI Overviews" },
       { "title": "Automated Content Creation", "description": "Generate citation-optimized content without manual effort" },
       { "title": "Self-Learning Optimization", "description": "Continuously improve content based on real performance data" },
-      { "title": "Full SEO + AEO", "description": "Traditional search optimization combined with AI-first strategies" }
+      { "title": "Full SEO + AI Search", "description": "Traditional search optimization combined with AI-first strategies" }
     ],
     "topics": [
-      "Answer Engine Optimization (AEO)",
+      "AI search optimization",
       "AI SEO and citation optimization",
       "Getting cited by AI assistants",
       "Content optimization for ChatGPT, Perplexity, Gemini",

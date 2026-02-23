@@ -83,7 +83,7 @@ export const AutomatedAgentSection = () => {
             The Problem
           </p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-            <span className="text-muted-foreground">SEO takes months. AEO is complex.</span>{" "}
+            <span className="text-muted-foreground">SEO takes months. AI search is complex.</span>{" "}
             <span className="gradient-text">Both require expensive consultants.</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">

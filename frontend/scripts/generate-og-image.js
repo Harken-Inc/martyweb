@@ -44,17 +44,17 @@ async function generateOGImage() {
     ctx.font = 'bold 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
     ctx.fillText('Cakewalk', 155, 122);
 
-    // AEO badge
+    // AI badge
     ctx.fillStyle = 'rgba(0, 191, 255, 0.2)';
-    ctx.fillRect(290, 98, 50, 28);
+    ctx.fillRect(290, 98, 35, 28);
     ctx.fillStyle = '#00bfff';
     ctx.font = '16px monospace';
-    ctx.fillText('AEO', 300, 118);
+    ctx.fillText('AI', 298, 118);
   } catch (e) {
     // Logo not found, continue without it
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 32px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
-    ctx.fillText('Cakewalk AEO', 80, 120);
+    ctx.fillText('Cakewalk AI', 80, 120);
   }
 
   // Main headline

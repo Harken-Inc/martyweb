@@ -1,5 +1,5 @@
 ---
-title: Cakewalk AEO - Traffic to Your Site. On Autopilot.
+title: Cakewalk AI - Traffic to Your Site. On Autopilot.
 description: The AI agent that gets your content cited by ChatGPT, Perplexity, and Gemini—and ranked on Google.
 template: landing
 ---
@@ -81,18 +81,18 @@ Generating citation-optimized content. Building internal links. Updating search 
 
 ---
 
-## Why AEO Is Faster
+## Why AI Search Is Faster
 
 ### Weeks to Results. Not Months.
 
-|                      | Traditional SEO      | Cakewalk AEO                 |
+|                      | Traditional SEO      | Cakewalk AI                  |
 |----------------------|----------------------|------------------------------|
 | **Time to results**  | 6-12 months          | Weeks                        |
 | **Competition**      | Millions of pages    | Almost nobody                |
 | **Visibility per win**| One of 10 blue links | Often the only source cited  |
 | **Effort**           | Constant             | Set and forget               |
 
-SEO still matters—we do that too. But AEO is where the fast wins are.
+SEO still matters—we do that too. But AI search is where the fast wins are.
 
 ---
 

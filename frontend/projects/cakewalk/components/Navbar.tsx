@@ -29,7 +29,7 @@ export const Navbar = () => {
               <img src="/projects/cakewalk/cakewalk-glow.png" alt="Cakewalk" width={20} height={20} className="rounded relative" />
             </div>
             <span className="font-semibold text-foreground">Cakewalk</span>
-            <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">AEO</span>
+            <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">AI</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -50,7 +50,7 @@ export const ComparisonSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Why AEO Is Faster</span>
+            <span className="gradient-text">Why AI Search Is Faster</span>
           </h2>
           <p className="text-xl text-foreground font-medium">Weeks to Results. Not Months.</p>
         </motion.div>
@@ -69,7 +69,7 @@ export const ComparisonSection = () => {
                 Traditional SEO
               </div>
               <div className="p-4 md:p-6 text-center font-semibold gradient-text" style={{ borderLeft: '1px solid hsl(195 100% 50% / 0.3)' }}>
-                Cakewalk AEO
+                Cakewalk AI
               </div>
             </div>
 
@@ -105,7 +105,7 @@ export const ComparisonSection = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-center mt-8 text-muted-foreground"
           >
-            SEO still matters—we do that too. But <span className="text-primary font-medium">AEO is where the fast wins are.</span>
+            SEO still matters—we do that too. But <span className="text-primary font-medium">AI search is where the fast wins are.</span>
           </motion.p>
         </motion.div>
       </div>

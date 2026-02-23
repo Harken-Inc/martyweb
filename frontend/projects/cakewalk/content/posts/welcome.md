@@ -3,7 +3,7 @@ title: The Shift to AI Search Is Here—And Most Businesses Are Missing It
 date: 2026-01-10
 author: Cakewalk Team
 excerpt: AI search is growing exponentially. Here's why early movers will own their categories.
-tags: ["AI Search", "AEO", "SEO"]
+tags: ["AI Search", "AI Optimization", "SEO"]
 ---
 
 # The Shift to AI Search Is Here—And Most Businesses Are Missing It

@@ -62,11 +62,11 @@ export const CapabilitiesSection = () => {
               <span className="text-foreground">, </span>
               <span className="gradient-text">Self-Optimizing</span>
               <br />
-              <span className="text-foreground">AEO & SEO Platform</span>
+              <span className="text-foreground">AI & SEO Platform</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Imagine an army of expert SEO/AEO agents constantly working to
+              Imagine an army of expert AEO/SEO agents constantly working to
               improve traffic to your site.
             </p>
           </motion.div>
