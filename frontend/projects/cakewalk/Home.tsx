@@ -9,6 +9,7 @@ import { ContentQualitySection } from "./components/ContentQualitySection"
 import { ContentTypesSection } from "./components/ContentTypesSection"
 import { ResearchSection } from "./components/ResearchSection"
 import { PricingSection } from "./components/PricingSection"
+import { TestimonialSection } from "./components/TestimonialSection"
 import { FAQSection } from "./components/FAQSection"
 import { CTASection } from "./components/CTASection"
 import { Footer } from "./components/Footer"
@@ -21,6 +22,7 @@ export default function CakewalkHome() {
       <main className="pt-16">
         <HeroSection />
         <CapabilitiesSection />
+        <TestimonialSection />
         <OpportunitySection />
         <HowItWorksSection />
         <ContentQualitySection />
