@@ -9,7 +9,7 @@ const testimonials = [
       "The speed of responses blew us away. We went from brief to live content faster than we ever thought possible.",
     name: "Eoin",
     role: "CEO",
-    company: "Source Table",
+    company: "Sourcetable",
     image: "/projects/cakewalk/testimonials/eoin.jpeg",
   },
   {
