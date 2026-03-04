@@ -1,0 +1,23 @@
+{
+  "name": "Martin Wells",
+  "domain": "martinwells.com",
+  "description": "Fractional CTO, Board Advisor, AI Consultant and Author. I help startups grow fast.",
+  "tagline": "Fractional CTO & AI Advisor",
+  "theme": {
+    "primaryColor": "#0f172a",
+    "secondaryColor": "#3b82f6",
+    "accentColor": "#64748b",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Services", "path": "#services" },
+    { "label": "Track Record", "path": "#track-record" },
+    { "label": "Experience", "path": "#experience" },
+    { "label": "Contact", "path": "#contact" }
+  ],
+  "social": {
+    "linkedin": "martinjwells",
+    "email": "martin.wells@gmail.com"
+  }
+}

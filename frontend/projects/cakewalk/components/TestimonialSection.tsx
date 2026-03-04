@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { Quote } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -69,14 +69,9 @@ export const TestimonialSection = () => {
               className="relative group"
             >
               <div className="glass-card rounded-2xl p-8 h-full border border-border/50 hover:border-primary/40 transition-all duration-300 hover:glow-box flex flex-col">
-                <Quote className="w-8 h-8 text-primary/30 mb-4" />
-
-                <p className="text-muted-foreground leading-relaxed flex-1 text-[0.95rem]">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-
-                <div className="flex items-center gap-4 mt-6 pt-6 border-t border-border/30">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/30">
+                <div className="flex items-center gap-4 mb-6">
+                  <Quote className="absolute -top-2 -left-1 w-8 h-8 text-primary/20" />
+                  <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/30 shrink-0">
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -85,13 +80,26 @@ export const TestimonialSection = () => {
                     />
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">
+                    <p className="font-bold text-foreground text-lg">
                       {testimonial.name}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {testimonial.role}, {testimonial.company}
+                      {testimonial.role} @ {testimonial.company}
                     </p>
                   </div>
+                </div>
+
+                <p className="text-muted-foreground leading-relaxed flex-1 text-[0.95rem]">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+
+                <div className="flex gap-1 mt-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                    />
+                  ))}
                 </div>
               </div>
             </motion.div>

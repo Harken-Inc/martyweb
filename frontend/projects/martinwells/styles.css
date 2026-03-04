@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --mw-background: #ffffff;
+  --mw-foreground: #0f172a;
+  --mw-muted: #64748b;
+  --mw-accent: #3b82f6;
+  --mw-border: #e2e8f0;
+  --mw-surface: #f8fafc;
+  --mw-mono: 'JetBrains Mono', monospace;
+  --mw-sans: 'Inter', sans-serif;
+}

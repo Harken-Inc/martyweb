@@ -43,7 +43,11 @@
     ".next-cakewalk/types/**/*.ts",
     ".next-cakewalk/dev/types/**/*.ts",
     ".next-learningmaking/types/**/*.ts",
-    ".next-learningmaking/dev/types/**/*.ts"
+    ".next-learningmaking/dev/types/**/*.ts",
+    ".next-hightail/types/**/*.ts",
+    ".next-hightail/dev/types/**/*.ts",
+    ".next-martinwells/types/**/*.ts",
+    ".next-martinwells/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
