@@ -1,14 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, ArrowRight, Mail, Linkedin, ExternalLink } from 'lucide-react'
+import { Menu, X, ArrowRight, Mail, Linkedin, ExternalLink, Download } from 'lucide-react'
 import './styles.css'
 
 const NAV_LINKS = [
   { label: 'Services', href: '#services' },
-  { label: 'Track Record', href: '#track-record' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Resources', href: '#resources' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -62,11 +62,12 @@ function Navbar() {
 function HeroSection() {
   return (
     <section className="pt-32 pb-20 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row md:items-start md:justify-between gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="flex-1"
         >
           <p
             className="text-sm tracking-widest uppercase text-[#3b82f6] mb-6"
@@ -98,16 +99,44 @@ function HeroSection() {
             I help startups grow fast. From architecting scalable AI products to
             fixing vibe-coded messes, I turn technical complexity into competitive advantage.
           </p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://cal.com/martinwells"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#0f172a] text-white text-sm font-medium rounded hover:bg-[#1e293b] transition-colors"
+              style={{ fontFamily: 'var(--mw-sans)' }}
+            >
+              <ArrowRight size={16} />
+              Book a Call
+            </a>
+            <a
+              href="https://superworknow.substack.com/subscribe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-[#e2e8f0] text-[#0f172a] text-sm font-medium rounded hover:border-[#3b82f6]/30 transition-colors"
+              style={{ fontFamily: 'var(--mw-sans)' }}
+            >
+              <Mail size={16} />
+              Subscribe to Newsletter
+            </a>
+          </div>
+          <div className="mt-6 flex items-center gap-1 text-sm text-[#94a3b8]" style={{ fontFamily: 'var(--mw-mono)' }}>
+            <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2" />
+            Available for new engagements
+          </div>
         </motion.div>
         <motion.div
-          className="mt-12 flex items-center gap-1 text-sm text-[#94a3b8]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          style={{ fontFamily: 'var(--mw-mono)' }}
+          className="shrink-0"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2" />
-          Available for new engagements
+          <img
+            src="/projects/martinwells/profile.jpeg"
+            alt="Martin Wells"
+            className="w-48 h-48 md:w-64 md:h-64 rounded-2xl object-cover shadow-lg"
+          />
         </motion.div>
       </div>
     </section>
@@ -184,6 +213,78 @@ function ServicesSection() {
                 ))}
               </ul>
             </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+const CURRENT_WORKS = [
+  {
+    title: 'Superwork',
+    description: 'A newsletter about the future of work, AI, and building things that matter.',
+    href: 'https://superworknow.substack.com/subscribe',
+    tag: 'Newsletter',
+    image: '/projects/martinwells/superwork.png',
+  },
+]
+
+function CurrentWorksSection() {
+  return (
+    <section id="current-works" className="py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <p
+          className="text-sm tracking-widest uppercase text-[#3b82f6] mb-4"
+          style={{ fontFamily: 'var(--mw-mono)' }}
+        >
+          What I&apos;m Working On
+        </p>
+        <h2
+          className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-12"
+          style={{ fontFamily: 'var(--mw-sans)' }}
+        >
+          Current Works
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {CURRENT_WORKS.map((work, i) => (
+            <motion.a
+              key={work.title}
+              href={work.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white border border-[#e2e8f0] rounded-lg p-8 hover:border-[#3b82f6]/30 transition-colors flex gap-6 items-start"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              {work.image && (
+                <img
+                  src={work.image}
+                  alt={work.title}
+                  className="w-20 h-20 rounded-lg object-cover shrink-0"
+                />
+              )}
+              <div>
+                <span
+                  className="inline-block px-2 py-1 text-xs tracking-wider uppercase text-[#3b82f6] border border-[#3b82f6]/20 rounded mb-4"
+                  style={{ fontFamily: 'var(--mw-mono)' }}
+                >
+                  {work.tag}
+                </span>
+                <h3
+                  className="text-lg font-semibold text-[#0f172a] mb-3 flex items-center gap-2"
+                  style={{ fontFamily: 'var(--mw-sans)' }}
+                >
+                  {work.title}
+                  <ExternalLink size={14} className="text-[#94a3b8] group-hover:text-[#3b82f6] transition-colors" />
+                </h3>
+                <p className="text-[#64748b] text-sm leading-relaxed">
+                  {work.description}
+                </p>
+              </div>
+            </motion.a>
           ))}
         </div>
       </div>
@@ -370,6 +471,68 @@ function ExperienceSection() {
   )
 }
 
+const RESOURCES = [
+  {
+    title: 'Claude Code Infra-Ops Skill',
+    description: 'A Claude Code skill for infrastructure operations — automates common DevOps tasks like deployments, monitoring, and cloud management.',
+    href: '/projects/martinwells/infra-ops.skill',
+    tag: 'Claude Code Skill',
+    download: true,
+  },
+]
+
+function ResourcesSection() {
+  return (
+    <section id="resources" className="py-20 px-6">
+      <div className="max-w-6xl mx-auto">
+        <p
+          className="text-sm tracking-widest uppercase text-[#3b82f6] mb-4"
+          style={{ fontFamily: 'var(--mw-mono)' }}
+        >
+          Free Downloads
+        </p>
+        <h2
+          className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-12"
+          style={{ fontFamily: 'var(--mw-sans)' }}
+        >
+          Resources
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {RESOURCES.map((resource, i) => (
+            <motion.a
+              key={resource.title}
+              href={resource.href}
+              download={resource.download}
+              className="group bg-white border border-[#e2e8f0] rounded-lg p-8 hover:border-[#3b82f6]/30 transition-colors"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              <span
+                className="inline-block px-2 py-1 text-xs tracking-wider uppercase text-[#3b82f6] border border-[#3b82f6]/20 rounded mb-4"
+                style={{ fontFamily: 'var(--mw-mono)' }}
+              >
+                {resource.tag}
+              </span>
+              <h3
+                className="text-lg font-semibold text-[#0f172a] mb-3 flex items-center gap-2"
+                style={{ fontFamily: 'var(--mw-sans)' }}
+              >
+                {resource.title}
+                <Download size={14} className="text-[#94a3b8] group-hover:text-[#3b82f6] transition-colors" />
+              </h3>
+              <p className="text-[#64748b] text-sm leading-relaxed">
+                {resource.description}
+              </p>
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ContactSection() {
   return (
     <section id="contact" className="py-20 px-6">
@@ -430,15 +593,6 @@ function Footer() {
         </span>
         <div className="flex items-center gap-6">
           <a
-            href="https://cakewalk.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-[#94a3b8] hover:text-[#0f172a] transition-colors"
-            style={{ fontFamily: 'var(--mw-mono)' }}
-          >
-            cakewalk.ai
-          </a>
-          <a
             href="https://www.linkedin.com/in/martinjwells"
             target="_blank"
             rel="noopener noreferrer"
@@ -453,14 +607,30 @@ function Footer() {
 }
 
 export default function MartinWellsHome() {
+  useEffect(() => {
+    const serverUrl = process.env.NEXT_PUBLIC_CHATBOSS_URL
+    const apiKey = process.env.NEXT_PUBLIC_CHATBOSS_API_KEY
+    if (!serverUrl || !apiKey) return
+
+    // Don't add if already loaded
+    if (document.getElementById('chatboss-widget')) return
+
+    const script = document.createElement('script')
+    script.src = `${serverUrl}/widget/${apiKey}/chatboss.js`
+    script.async = true
+    document.body.appendChild(script)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'var(--mw-sans)' }}>
       <Navbar />
       <main>
         <HeroSection />
         <ServicesSection />
+        <CurrentWorksSection />
         <TrackRecordSection />
         <ExperienceSection />
+        <ResourcesSection />
         <ContactSection />
       </main>
       <Footer />

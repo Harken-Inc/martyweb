@@ -3,7 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-import { getCakewalkBlogClient, Post as CakewalkPost } from '../lib/cakewalk-api'
+import { getBlogClient, Post as CakewalkPost } from '../lib/cakewalk-api'
 
 // Convert asterisk-based lists to proper HTML lists
 function convertAsterisksToLists(html: string): string {
@@ -314,25 +314,26 @@ export function getProjectStylesPath(projectName?: string): string {
   return path.join(process.cwd(), 'projects', name, 'styles.css')
 }
 
+// Projects that use the Cakewalk Blog API
+const API_PROJECTS = ['cakewalk', 'martinwells']
+
 export async function getAllPosts(projectName?: string): Promise<Post[]> {
   const name = projectName || getProjectName()
 
-  // Use Cakewalk API for cakewalk project
-  if (name === 'cakewalk') {
+  // Use Cakewalk API for configured projects
+  if (API_PROJECTS.includes(name)) {
     try {
-      const client = getCakewalkBlogClient()
+      const client = getBlogClient(name)
       const response = await client.getPosts({ status: 'published', limit: 100 })
 
-      // Log in development for debugging
       if (process.env.NODE_ENV === 'development') {
-        console.log(`[Cakewalk API] Fetched ${response.posts.length} posts (total: ${response.pagination.total})`)
+        console.log(`[${name} API] Fetched ${response.posts.length} posts (total: ${response.pagination.total})`)
       }
 
       const posts = response.posts.map(convertCakewalkPost)
-      // Sort by date, newest first
       return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
     } catch (error) {
-      console.error('Failed to fetch posts from Cakewalk API:', error)
+      console.error(`Failed to fetch posts from API for ${name}:`, error)
       return []
     }
   }
@@ -371,15 +372,15 @@ export async function getAllPosts(projectName?: string): Promise<Post[]> {
 export async function getPostBySlug(slug: string, projectName?: string): Promise<Post | null> {
   const name = projectName || getProjectName()
 
-  // Use Cakewalk API for cakewalk project
-  if (name === 'cakewalk') {
+  // Use Cakewalk API for configured projects
+  if (API_PROJECTS.includes(name)) {
     try {
-      const client = getCakewalkBlogClient()
+      const client = getBlogClient(name)
       const post = await client.getPostBySlug(slug)
       if (!post) return null
       return convertCakewalkPost(post)
     } catch (error) {
-      console.error('Failed to fetch post from Cakewalk API:', error)
+      console.error(`Failed to fetch post from API for ${name}:`, error)
       return null
     }
   }

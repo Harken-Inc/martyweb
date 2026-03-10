@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllPosts, getProjectName, getProjectConfig } from '../../../../shared/utils/markdown'
 import { BlogPage as CakewalkBlogPage } from '@projects/cakewalk/components/BlogPage'
+import { BlogPage as MartinWellsBlogPage } from '@projects/martinwells/components/BlogPage'
 
 export const dynamic = 'force-dynamic'
 
@@ -51,6 +52,9 @@ export default async function BlogPage() {
   // Use project-specific blog template if available
   if (projectName === 'cakewalk') {
     return <CakewalkBlogPage posts={posts} />
+  }
+  if (projectName === 'martinwells') {
+    return <MartinWellsBlogPage posts={posts} />
   }
 
   // Default blog template

@@ -28,7 +28,7 @@ export function CookieConsent() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 max-w-xs bg-zinc-900 rounded-lg shadow-lg border border-zinc-800 p-4 animate-in slide-in-from-bottom-2 fade-in duration-300">
+    <div className="fixed bottom-4 left-4 z-50 max-w-xs bg-zinc-900 rounded-lg shadow-lg border border-zinc-800 p-4 animate-in slide-in-from-bottom-2 fade-in duration-300">
       <p className="text-sm text-zinc-400 mb-3">
         We use cookies to improve your experience.
       </p>

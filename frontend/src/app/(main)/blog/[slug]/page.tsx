@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { getPostBySlug, getAllPosts, getProjectName, getProjectConfig } from '../../../../../shared/utils/markdown'
 import { notFound } from 'next/navigation'
 import { BlogPostPage as CakewalkBlogPostPage } from '@projects/cakewalk/components/BlogPostPage'
+import { BlogPostPage as MartinWellsBlogPostPage } from '@projects/martinwells/components/BlogPostPage'
 
 export const dynamic = 'force-dynamic'
 
@@ -60,8 +61,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  // Skip static generation for cakewalk (uses API)
-  if (getProjectName() === 'cakewalk') {
+  // Skip static generation for API-powered projects
+  if (['cakewalk', 'martinwells'].includes(getProjectName())) {
     return []
   }
 
@@ -190,31 +191,23 @@ export default async function BlogPost({ params }: Props) {
     url: canonicalUrl,
   }
 
+  // Shared structured data for API-powered projects
+  const structuredData = (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }} />
+    </>
+  )
+
   // Use project-specific blog post template if available
   if (projectName === 'cakewalk') {
-    return (
-      <>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
-        />
-        {faqJsonLd && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-          />
-        )}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableJsonLd) }}
-        />
-        <CakewalkBlogPostPage post={post} relatedPosts={relatedPosts} />
-      </>
-    )
+    return <>{structuredData}<CakewalkBlogPostPage post={post} relatedPosts={relatedPosts} /></>
+  }
+
+  if (projectName === 'martinwells') {
+    return <>{structuredData}<MartinWellsBlogPostPage post={post} relatedPosts={relatedPosts} /></>
   }
 
   // Default blog post template

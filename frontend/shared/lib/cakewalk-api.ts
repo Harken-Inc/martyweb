@@ -182,37 +182,56 @@ export class BlogClient {
   }
 }
 
-// Singleton instance for cakewalk project
-let clientInstance: BlogClient | null = null
+// Singleton instances per project
+const clientInstances: Map<string, BlogClient> = new Map()
 
-export function getCakewalkBlogClient(): BlogClient {
-  if (!clientInstance) {
-    const apiKey = process.env.CAKEWALK_API_KEY
-    const projectId = process.env.CAKEWALK_PROJECT_ID
-    const baseUrl = process.env.CAKEWALK_API_URL
-    const isDevelopment = process.env.NODE_ENV === 'development'
+export function getBlogClient(project: string): BlogClient {
+  const existing = clientInstances.get(project)
+  if (existing) return existing
 
-    if (!apiKey || !projectId) {
-      throw new Error('CAKEWALK_API_KEY and CAKEWALK_PROJECT_ID environment variables are required')
-    }
+  const prefix = project.toUpperCase().replace(/-/g, '_')
+  const apiKey = process.env[`${prefix}_API_KEY`] || process.env.CAKEWALK_API_KEY
+  const projectId = process.env[`${prefix}_PROJECT_ID`] || process.env.CAKEWALK_PROJECT_ID
+  const baseUrl = process.env[`${prefix}_API_URL`] || process.env.CAKEWALK_API_URL
+  const isDevelopment = process.env.NODE_ENV === 'development'
 
-    clientInstance = new BlogClient({
-      apiKey,
-      projectId,
-      options: {
-        baseUrl: baseUrl || 'https://api.cakewalk.ai',
-        // Shorter cache in development for faster iteration
-        cacheTtl: isDevelopment ? 10 : 300,
-      },
-    })
+  if (!apiKey || !projectId) {
+    throw new Error(`${prefix}_API_KEY and ${prefix}_PROJECT_ID environment variables are required`)
   }
-  return clientInstance
+
+  const client = new BlogClient({
+    apiKey,
+    projectId,
+    options: {
+      baseUrl: baseUrl || 'https://api.cakewalk.ai',
+      cacheTtl: isDevelopment ? 10 : 300,
+    },
+  })
+
+  clientInstances.set(project, client)
+  return client
 }
 
-// Helper to reset the client instance (useful for development/testing)
-export function resetCakewalkBlogClient(): void {
-  if (clientInstance) {
-    clientInstance.clearCache()
-    clientInstance = null
+// Backward-compatible alias
+export function getCakewalkBlogClient(): BlogClient {
+  return getBlogClient('cakewalk')
+}
+
+// Helper to reset a client instance
+export function resetBlogClient(project?: string): void {
+  if (project) {
+    const client = clientInstances.get(project)
+    if (client) {
+      client.clearCache()
+      clientInstances.delete(project)
+    }
+  } else {
+    clientInstances.forEach(c => c.clearCache())
+    clientInstances.clear()
   }
+}
+
+// Backward-compatible alias
+export function resetCakewalkBlogClient(): void {
+  resetBlogClient('cakewalk')
 }
