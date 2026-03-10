@@ -3,6 +3,8 @@ import path from "path";
 
 const projectName = process.env.PROJECT_NAME || "hightail";
 
+const chatbossUrl = process.env.CHATBOSS_INTERNAL_URL || "http://localhost:3008";
+
 const nextConfig: NextConfig = {
   env: {
     PROJECT_NAME: projectName,
@@ -24,6 +26,14 @@ const nextConfig: NextConfig = {
     resolveAlias: {
       '@projects': path.resolve(__dirname, './projects'),
     },
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/chatboss/:path*",
+        destination: `${chatbossUrl}/:path*`,
+      },
+    ];
   },
 };
 
