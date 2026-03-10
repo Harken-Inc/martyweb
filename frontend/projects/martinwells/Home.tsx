@@ -608,14 +608,15 @@ function Footer() {
 
 export default function MartinWellsHome() {
   useEffect(() => {
+    const serverUrl = process.env.NEXT_PUBLIC_CHATBOSS_URL
     const apiKey = process.env.NEXT_PUBLIC_CHATBOSS_API_KEY
-    if (!apiKey) return
+    if (!serverUrl || !apiKey) return
 
     // Don't add if already loaded
     if (document.getElementById('chatboss-widget')) return
 
     const script = document.createElement('script')
-    script.src = `/chatboss/widget/${apiKey}/chatboss.js`
+    script.src = `${serverUrl}/widget/${apiKey}/chatboss.js`
     script.async = true
     document.body.appendChild(script)
   }, [])
