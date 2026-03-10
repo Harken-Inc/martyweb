@@ -18,24 +18,16 @@ import "./styles.css"
 
 export default function CakewalkHome() {
   useEffect(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_CHATWOOT_BASE_URL
-    const token = process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN
-    if (!baseUrl || !token) return
+    const serverUrl = process.env.NEXT_PUBLIC_CHATBOSS_URL
+    const apiKey = process.env.NEXT_PUBLIC_CHATBOSS_CAKEWALK_KEY
+    if (!serverUrl || !apiKey) return
+
+    if (document.getElementById('chatboss-widget')) return
 
     const script = document.createElement('script')
-    script.src = `${baseUrl}/packs/js/sdk.js`
+    script.src = `${serverUrl}/widget/${apiKey}/chatboss.js`
     script.async = true
-    script.onload = () => {
-      (window as any).chatwootSDK.run({
-        websiteToken: token,
-        baseUrl: baseUrl,
-      })
-    }
     document.body.appendChild(script)
-
-    return () => {
-      script.remove()
-    }
   }, [])
 
   return (
