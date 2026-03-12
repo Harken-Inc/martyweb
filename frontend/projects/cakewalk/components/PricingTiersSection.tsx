@@ -19,7 +19,7 @@ const tiers = [
       "ChatGPT & Google AI tracking",
       "API access",
     ],
-    cta: "Get Started",
+    cta: "Try For Free",
     highlighted: false,
   },
   {
@@ -35,7 +35,7 @@ const tiers = [
       "Up to 10 competitors",
       "Priority support",
     ],
-    cta: "Get Started",
+    cta: "Try For Free",
     highlighted: true,
     badge: "Recommended",
   },
@@ -51,7 +51,7 @@ const tiers = [
       "Unlimited competitors",
       "AEO Expert Onboarding call",
     ],
-    cta: "Get Started",
+    cta: "Try For Free",
     highlighted: false,
   },
 ];
