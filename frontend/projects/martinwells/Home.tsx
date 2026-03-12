@@ -79,7 +79,7 @@ function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-6"
             style={{ fontFamily: 'var(--mw-sans)' }}
           >
-            Martin Wells
+            I help startups scale to acquisition.
           </h1>
           <div className="flex flex-wrap gap-3 mb-8">
             {['Fractional CTO', 'Board Advisor', 'AI Consultant', 'Author'].map(role => (
@@ -96,8 +96,7 @@ function HeroSection() {
             className="text-xl md:text-2xl text-[#64748b] max-w-2xl leading-relaxed font-light"
             style={{ fontFamily: 'var(--mw-sans)' }}
           >
-            I help startups grow fast. From architecting scalable AI products to
-            fixing vibe-coded messes, I turn technical complexity into competitive advantage.
+            30+ companies advised. $600M+ in funding raised. 10 acquisitions to Meta, Sony, Zynga, and AOL. I bring the technical leadership that gets startups from zero to exit.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
@@ -143,26 +142,56 @@ function HeroSection() {
   )
 }
 
+const CLIENT_LOGOS = [
+  { name: 'IAG', src: '/projects/martinwells/logos/iag.png' },
+  { name: 'Channel 7', src: '/projects/martinwells/logos/channel7.png' },
+  { name: 'Mirvac', src: '/projects/martinwells/logos/mirvac.png', invert: true },
+  { name: 'Raiz', src: '/projects/martinwells/logos/raiz.webp' },
+  { name: 'Rethink', src: '/projects/martinwells/logos/rethink.png' },
+  { name: 'Asset Future', src: '/projects/martinwells/logos/assetfuture.webp' },
+]
+
+function ClientLogosSection() {
+  return (
+    <section className="py-12 px-6 border-b border-[#e2e8f0]">
+      <div className="max-w-6xl mx-auto">
+        <p
+          className="text-xs tracking-widest uppercase text-[#94a3b8] text-center mb-8"
+          style={{ fontFamily: 'var(--mw-mono)' }}
+        >
+          Trusted by
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+          {CLIENT_LOGOS.map(logo => (
+            <img
+              key={logo.name}
+              src={logo.src}
+              alt={logo.name}
+              className="h-8 md:h-10 object-contain opacity-50 hover:opacity-80 transition-opacity grayscale"
+              style={logo.invert ? { filter: 'grayscale(100%) invert(1) brightness(0)' } : undefined}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 const SERVICES = [
   {
     title: 'Fractional CTO',
-    description: 'Technical leadership for startups that need senior engineering guidance without the full-time commitment. I embed with your team to architect, build, and ship.',
+    description: 'Get a seasoned technical co-founder without the equity cost. Your team ships faster, your architecture scales, and your investors sleep better.',
     items: ['Technical architecture & roadmaps', 'Team building & mentorship', 'Infrastructure audits', 'Dev process optimization'],
   },
   {
     title: 'Board Advisor',
-    description: 'Strategic technology guidance at the board level. I help companies and investors evaluate technical risk, opportunity, and execution.',
+    description: 'Make smarter technology bets at the board level. I help founders and investors separate real technical risk from noise before it costs millions.',
     items: ['Technical due diligence', 'M&A evaluation', 'Technology strategy', 'AI readiness assessment'],
   },
   {
     title: 'AI Consultant',
-    description: 'Hands-on AI/ML expertise from RAG architectures to computer vision pipelines. I help teams adopt AI that actually works in production.',
+    description: 'Skip the 6-month AI experiment that goes nowhere. I design and ship production AI systems — RAG, computer vision, LLM pipelines — that deliver measurable ROI.',
     items: ['AI product architecture', 'LLM integration & RAG systems', 'ML pipeline design', 'AI-assisted dev workflows'],
-  },
-  {
-    title: 'Author',
-    description: 'Writing about the intersection of technology, AI, and building companies. Sharing hard-won lessons from two decades of shipping products.',
-    items: ['Technical leadership', 'AI strategy', 'Startup engineering', 'Product development'],
   },
 ]
 
@@ -201,7 +230,7 @@ function ServicesSection() {
               <p className="text-[#64748b] text-sm leading-relaxed mb-4">
                 {service.description}
               </p>
-              <ul className="space-y-1.5">
+              <ul className="space-y-1.5 mb-6">
                 {service.items.map(item => (
                   <li
                     key={item}
@@ -212,6 +241,15 @@ function ServicesSection() {
                   </li>
                 ))}
               </ul>
+              <a
+                href="https://cal.com/martinwells"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#3b82f6] hover:text-[#2563eb] transition-colors"
+                style={{ fontFamily: 'var(--mw-sans)' }}
+              >
+                Book a call <ArrowRight size={14} />
+              </a>
             </motion.div>
           ))}
         </div>
@@ -556,8 +594,18 @@ function ContactSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:martin.wells@gmail.com"
+              href="https://cal.com/martinwells"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#0f172a] text-white text-sm font-medium rounded hover:bg-[#1e293b] transition-colors"
+              style={{ fontFamily: 'var(--mw-sans)' }}
+            >
+              <ArrowRight size={16} />
+              Book a Call
+            </a>
+            <a
+              href="mailto:martin.wells@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#e2e8f0] text-[#0f172a] text-sm font-medium rounded hover:border-[#3b82f6]/30 transition-colors"
               style={{ fontFamily: 'var(--mw-sans)' }}
             >
               <Mail size={16} />
@@ -626,10 +674,11 @@ export default function MartinWellsHome() {
       <Navbar />
       <main>
         <HeroSection />
+        <ClientLogosSection />
         <ServicesSection />
-        <CurrentWorksSection />
         <TrackRecordSection />
         <ExperienceSection />
+        <CurrentWorksSection />
         <ResourcesSection />
         <ContactSection />
       </main>

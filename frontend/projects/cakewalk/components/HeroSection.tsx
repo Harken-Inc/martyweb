@@ -154,7 +154,7 @@ const TerminalLog = () => {
     <div className="glass-card rounded-xl p-4 md:p-6 font-mono text-sm border border-primary/20 backdrop-blur-sm overflow-hidden text-left" style={{ backgroundColor: 'hsl(220 20% 4% / 0.8)' }}>
       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-primary/10">
         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-        <span className="text-xs text-muted-foreground">cakewalk-agent</span>
+        <span className="text-xs text-muted-foreground">cakewalk agent running</span>
       </div>
       <div className="space-y-1.5 h-[280px] overflow-hidden">
         {terminalLogs.map((log, index) => {
@@ -227,9 +227,9 @@ export const HeroSection = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-5"
             >
-              <span className="text-foreground">Traffic to Your Site.</span>
+              <span className="text-foreground">Your AI Agent for</span>
               <br />
-              <span className="gradient-text glow-text">On Autopilot.</span>
+              <span className="gradient-text glow-text">Traffic Growth.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -239,8 +239,8 @@ export const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              An AI agent that does the work of an entire AEO/SEO department. Competitor analysis, keyword gaps, AI citations, reputation tracking, content calendars, writing—
-              <span className="text-foreground font-medium">while you sleep.</span>
+              Deploy an agent that gets your website cited by ChatGPT, Google AI, and Perplexity—and ranked on Google. It researches, writes, publishes, and optimizes—
+              <span className="text-foreground font-medium">all without you.</span>
             </motion.p>
 
             {/* CTA Buttons */}
@@ -251,6 +251,18 @@ export const HeroSection = () => {
               className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4"
             >
               <CTAButton />
+            </motion.div>
+
+            {/* Secondary CTA */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="mt-3 text-center lg:text-left"
+            >
+              <a href="/pricing" className="text-sm text-primary hover:text-primary/80 transition-colors">
+                See Pricing →
+              </a>
             </motion.div>
 
             {/* Trust indicators */}
@@ -271,6 +283,27 @@ export const HeroSection = () => {
               <div className="flex items-center gap-2">
                 <div className="w-1 h-1 rounded-full bg-primary" />
                 <span>Cancel anytime</span>
+              </div>
+            </motion.div>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.1, duration: 0.8 }}
+              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-8"
+            >
+              <div className="flex flex-col items-center lg:items-start">
+                <span className="text-2xl md:text-3xl font-bold text-primary">24,000+</span>
+                <span className="text-xs text-muted-foreground">articles generated</span>
+              </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <span className="text-2xl md:text-3xl font-bold text-primary">4.2</span>
+                <span className="text-xs text-muted-foreground">avg AI citations</span>
+              </div>
+              <div className="flex flex-col items-center lg:items-start">
+                <span className="text-2xl md:text-3xl font-bold text-primary">48%</span>
+                <span className="text-xs text-muted-foreground">avg traffic growth</span>
               </div>
             </motion.div>
 

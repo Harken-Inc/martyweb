@@ -51,10 +51,16 @@ export const CTASection = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-col items-center gap-4"
           >
+            <p className="text-sm font-medium text-primary">
+              Founding member pricing ends soon — only a few spots left
+            </p>
             <CTAButton className="text-lg px-8 py-6" />
             <p className="text-sm text-muted-foreground">
-              No credit card required. See results in weeks.
+              Free 7-day trial. No credit card required.
             </p>
+            <a href="/pricing" className="text-sm text-primary hover:text-primary/80 transition-colors">
+              Or explore our pricing →
+            </a>
           </motion.div>
         </motion.div>
       </div>

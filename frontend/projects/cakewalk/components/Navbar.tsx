@@ -34,6 +34,12 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
+            <a href="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Pricing
+            </a>
+            <a href="/content" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Content
+            </a>
             <a href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Blog
             </a>
@@ -80,6 +86,12 @@ export const Navbar = () => {
           style={{ backgroundColor: 'hsl(220 20% 4% / 0.8)' }}
         >
           <div className="container mx-auto px-4 py-3 flex flex-col gap-3">
+            <a href="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+              Pricing
+            </a>
+            <a href="/content" className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
+              Content
+            </a>
             <a href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors py-1">
               Blog
             </a>

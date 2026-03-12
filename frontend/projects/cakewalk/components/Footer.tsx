@@ -26,6 +26,8 @@ export const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-8 text-sm text-muted-foreground"
           >
+            <a href="/pricing" className="hover:text-primary transition-colors">Pricing</a>
+            <a href="/content" className="hover:text-primary transition-colors">Content</a>
             <a href="/blog" className="hover:text-primary transition-colors">Blog</a>
             <a href="/about" className="hover:text-primary transition-colors">About</a>
             <a href="https://app.cakewalk.ai/tools/prompt-checker" className="hover:text-primary transition-colors">Prompt Checker</a>

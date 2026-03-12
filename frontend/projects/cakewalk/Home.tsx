@@ -3,14 +3,13 @@
 import { useEffect } from "react"
 import { Navbar } from "./components/Navbar"
 import { HeroSection } from "./components/HeroSection"
+import { SocialProofStrip } from "./components/SocialProofStrip"
+import { ShiftExplainerSection } from "./components/ShiftExplainerSection"
 import { OpportunitySection } from "./components/OpportunitySection"
-import { CapabilitiesSection } from "./components/CapabilitiesSection"
 import { HowItWorksSection } from "./components/HowItWorksSection"
-import { ContentQualitySection } from "./components/ContentQualitySection"
-import { ContentTypesSection } from "./components/ContentTypesSection"
-import { ResearchSection } from "./components/ResearchSection"
-import { PricingSection } from "./components/PricingSection"
+import { CapabilitiesSection } from "./components/CapabilitiesSection"
 import { TestimonialSection } from "./components/TestimonialSection"
+import { PricingTiersSection } from "./components/PricingTiersSection"
 import { FAQSection } from "./components/FAQSection"
 import { CTASection } from "./components/CTASection"
 import { Footer } from "./components/Footer"
@@ -35,14 +34,13 @@ export default function CakewalkHome() {
       <Navbar />
       <main className="pt-16">
         <HeroSection />
-        <CapabilitiesSection />
-        <TestimonialSection />
+        <SocialProofStrip />
+        <ShiftExplainerSection />
         <OpportunitySection />
         <HowItWorksSection />
-        <ContentQualitySection />
-        <ContentTypesSection />
-        <ResearchSection />
-        <PricingSection />
+        <CapabilitiesSection />
+        <TestimonialSection />
+        <PricingTiersSection />
         <FAQSection />
         <CTASection />
       </main>
