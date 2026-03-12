@@ -5,11 +5,14 @@ import { useState, useEffect } from "react";
 import { getConsent } from "./CookieConsent";
 
 const GA_ID = "G-45JS8HN09V";
+const GA_DOMAIN = "cakewalk.ai";
 
 export function GoogleAnalytics() {
   const [hasConsent, setHasConsent] = useState(false);
+  const [isCorrectDomain, setIsCorrectDomain] = useState(false);
 
   useEffect(() => {
+    setIsCorrectDomain(window.location.hostname.includes(GA_DOMAIN));
     setHasConsent(getConsent());
 
     const handleConsentChange = () => {
@@ -22,7 +25,7 @@ export function GoogleAnalytics() {
     };
   }, []);
 
-  if (!hasConsent) return null;
+  if (!hasConsent || !isCorrectDomain) return null;
 
   return (
     <>

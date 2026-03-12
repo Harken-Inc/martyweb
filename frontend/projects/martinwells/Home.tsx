@@ -79,7 +79,7 @@ function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-6"
             style={{ fontFamily: 'var(--mw-sans)' }}
           >
-            I help startups scale to acquisition.
+            I help companies ship faster and scale smarter.
           </h1>
           <div className="flex flex-wrap gap-3 mb-8">
             {['Fractional CTO', 'Board Advisor', 'AI Consultant', 'Author'].map(role => (
@@ -259,6 +259,13 @@ function ServicesSection() {
 }
 
 const CURRENT_WORKS = [
+  {
+    title: 'Cakewalk AI',
+    description: 'An AI agent that grows your website traffic. It gets your content cited by ChatGPT, Perplexity, and Gemini—and ranked on Google.',
+    href: 'https://cakewalk.ai',
+    tag: 'AI Product',
+    image: '/projects/martinwells/cakewalk.png',
+  },
   {
     title: 'Superwork',
     description: 'A newsletter about the future of work, AI, and building things that matter.',

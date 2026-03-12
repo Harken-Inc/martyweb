@@ -1,0 +1,21 @@
+{
+  "name": "Harken AI",
+  "domain": "harken.ai",
+  "description": "Bring AI to life with world-class data-science, AI and automation",
+  "tagline": "Accelerate your business into Tomorrow",
+  "theme": {
+    "primaryColor": "#7C3AED",
+    "secondaryColor": "#0F172A",
+    "accentColor": "#22D3EE",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "About", "path": "/about" },
+    { "label": "Blog", "path": "/blog" },
+    { "label": "Contact", "path": "#contact" }
+  ],
+  "social": {
+    "linkedin": "harken-ai"
+  }
+}

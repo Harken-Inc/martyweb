@@ -1,0 +1,32 @@
+:root {
+  --hk-purple: #7C3AED;
+  --hk-purple-light: #8B5CF6;
+  --hk-purple-dark: #6D28D9;
+  --hk-dark: #0F0A1A;
+  --hk-dark-surface: #1A1025;
+  --hk-cyan: #22D3EE;
+  --hk-text: #E2E8F0;
+  --hk-text-muted: #94A3B8;
+  --hk-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--hk-dark);
+  color: var(--hk-text);
+  font-family: var(--hk-sans);
+}
+
+.hk-gradient-text {
+  background: linear-gradient(135deg, var(--hk-purple-light), var(--hk-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hk-gradient-bg {
+  background: linear-gradient(135deg, var(--hk-purple), var(--hk-purple-dark));
+}
+
+.hk-glow {
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.15);
+}
