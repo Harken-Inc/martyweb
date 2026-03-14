@@ -73,7 +73,7 @@ function HeroSection() {
             className="text-sm tracking-widest uppercase text-[#3b82f6] mb-6"
             style={{ fontFamily: 'var(--mw-mono)' }}
           >
-            Seattle, WA
+            San Francisco & Sydney
           </p>
           <h1
             className="text-5xl md:text-7xl font-bold text-[#0f172a] leading-[1.1] mb-6"
@@ -694,7 +694,7 @@ export default function MartinWellsHome() {
         <ServicesSection />
         <TrackRecordSection />
         <ExperienceSection />
-        <CurrentWorksSection />
+        {/* <CurrentWorksSection /> */}
         <ResourcesSection />
         <ContactSection />
       </main>
