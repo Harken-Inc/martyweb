@@ -267,6 +267,12 @@ const CURRENT_WORKS = [
     image: '/projects/martinwells/cakewalk.png',
   },
   {
+    title: 'OpenClaw Marketing',
+    description: 'Done-for-you AI marketing teams. We deploy and manage OpenClaw-based agents that handle social, ads, PR, SEO, email, and analytics.',
+    href: '/openclaw-marketing',
+    tag: 'AI Service',
+  },
+  {
     title: 'Superwork',
     description: 'A newsletter about the future of work, AI, and building things that matter.',
     href: 'https://superworknow.substack.com/subscribe',
@@ -292,12 +298,13 @@ function CurrentWorksSection() {
           Current Works
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {CURRENT_WORKS.map((work, i) => (
+          {CURRENT_WORKS.map((work, i) => {
+            const isExternal = work.href.startsWith('http')
+            return (
             <motion.a
               key={work.title}
               href={work.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="group bg-white border border-[#e2e8f0] rounded-lg p-8 hover:border-[#3b82f6]/30 transition-colors flex gap-6 items-start"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -323,14 +330,16 @@ function CurrentWorksSection() {
                   style={{ fontFamily: 'var(--mw-sans)' }}
                 >
                   {work.title}
-                  <ExternalLink size={14} className="text-[#94a3b8] group-hover:text-[#3b82f6] transition-colors" />
+                  {isExternal && <ExternalLink size={14} className="text-[#94a3b8] group-hover:text-[#3b82f6] transition-colors" />}
+                  {!isExternal && <ArrowRight size={14} className="text-[#94a3b8] group-hover:text-[#3b82f6] transition-colors" />}
                 </h3>
                 <p className="text-[#64748b] text-sm leading-relaxed">
                   {work.description}
                 </p>
               </div>
             </motion.a>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

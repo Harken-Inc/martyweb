@@ -8,8 +8,8 @@ export default function MainLayout({
 }>) {
   const projectName = getProjectName()
 
-  // Cakewalk uses its own navigation in page components
-  if (projectName === 'cakewalk') {
+  // Cakewalk and martinwells use their own navigation in page components
+  if (projectName === 'cakewalk' || projectName === 'martinwells') {
     return <>{children}</>
   }
 
