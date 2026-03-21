@@ -64,7 +64,7 @@ Add to `frontend/package.json` scripts (use next available port):
 
 Current port assignments:
 - 3000: hightail
-- 3001: vertex
+- 3001: innovator
 - 3002: myblog
 - 3003: portfolio
 - 3004: cakewalk

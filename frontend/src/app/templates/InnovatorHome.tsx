@@ -2,6 +2,55 @@ import Link from 'next/link'
 import { JSX } from 'react'
 import { getProjectConfig } from '../../../shared/utils/markdown'
 
+// Logo component
+const InnovatorLogo = ({ size = 'default', color = 'black' }: { size?: 'small' | 'default' | 'large'; color?: 'black' | 'white' }) => {
+  const textColor = color === 'white' ? 'text-white' : 'text-black'
+  const lineColor = color === 'white' ? 'bg-white' : 'bg-black'
+  const grayColor = color === 'white' ? 'bg-gray-400' : 'bg-gray-400'
+  const beamColor = color === 'white' ? 'bg-white' : 'bg-black'
+
+  if (size === 'small') {
+    return (
+      <div className="flex items-center gap-2">
+        {/* I-beam icon */}
+        <div className="flex flex-col items-center" style={{ width: 16, height: 20 }}>
+          <div className={`${beamColor} w-full`} style={{ height: 3 }} />
+          <div className="flex w-full justify-center flex-1">
+            <div className={`${grayColor} opacity-60`} style={{ width: 3 }} />
+            <div className={`${beamColor}`} style={{ width: 3 }} />
+          </div>
+          <div className={`${beamColor} w-full`} style={{ height: 3 }} />
+        </div>
+        <div className="flex flex-col">
+          <span className={`${textColor} font-bold text-sm tracking-wider leading-none`} style={{ fontStretch: 'condensed' }}>INNOVATOR</span>
+          <div className={`${lineColor} w-full mt-0.5`} style={{ height: 1 }} />
+          <span className={`${textColor} text-[6px] tracking-[0.25em] leading-none mt-0.5`}>SYSTEMS</span>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex items-center gap-3">
+      {/* I-beam icon */}
+      <div className="flex flex-col items-center" style={{ width: 28, height: 38 }}>
+        <div className={`${beamColor} w-full`} style={{ height: 5 }} />
+        <div className="flex w-full justify-center flex-1">
+          <div className={`${grayColor} opacity-60`} style={{ width: 5 }} />
+          <div className={`${beamColor}`} style={{ width: 5 }} />
+        </div>
+        <div className={`${beamColor} w-full`} style={{ height: 5 }} />
+      </div>
+      <div className="flex flex-col">
+        <span className={`${textColor} font-bold text-2xl tracking-wider leading-none`} style={{ fontStretch: 'condensed' }}>INNOVATOR</span>
+        <div className={`${lineColor} w-full mt-1`} style={{ height: 1.5 }} />
+        <span className={`${textColor} text-[8px] tracking-[0.3em] leading-none mt-1`}>SYSTEMS</span>
+        <span className={`${textColor} text-[7px] tracking-[0.25em] leading-none mt-0.5 opacity-70`}>innovatorsystems.com</span>
+      </div>
+    </div>
+  )
+}
+
 // Arrow icon component
 const ArrowUpRight = ({ className = "w-4 h-4" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,7 +103,7 @@ const iconMap: { [key: string]: () => JSX.Element } = {
   transformation: TransformationIcon,
 }
 
-export default function VertexHome() {
+export default function InnovatorHome() {
   const config = getProjectConfig()
 
   return (
@@ -64,8 +113,8 @@ export default function VertexHome() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="text-xl font-bold tracking-tight text-black">
-              {config.name.toUpperCase()}
+            <Link href="/">
+              <InnovatorLogo size="small" />
             </Link>
 
             {/* Navigation */}
@@ -152,7 +201,7 @@ export default function VertexHome() {
               </div>
               <div className="lg:flex lg:items-end">
                 <p className="text-gray-600 max-w-md">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.
+                  Targeted expertise across four disciplines to help you move faster and smarter.
                 </p>
               </div>
             </div>
@@ -266,7 +315,7 @@ export default function VertexHome() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
-            <span className="text-lg font-bold tracking-tight">{config.name.toUpperCase()}</span>
+            <InnovatorLogo size="small" color="white" />
 
             {/* Footer Navigation */}
             <nav className="flex items-center gap-8">

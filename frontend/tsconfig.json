@@ -49,7 +49,9 @@
     ".next-martinwells/types/**/*.ts",
     ".next-martinwells/dev/types/**/*.ts",
     ".next-harken/types/**/*.ts",
-    ".next-harken/dev/types/**/*.ts"
+    ".next-harken/dev/types/**/*.ts",
+    ".next-innovator/types/**/*.ts",
+    ".next-innovator/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
