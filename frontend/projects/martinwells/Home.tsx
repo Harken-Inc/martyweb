@@ -96,7 +96,7 @@ function HeroSection() {
             className="text-xl md:text-2xl text-[#64748b] max-w-2xl leading-relaxed font-light"
             style={{ fontFamily: 'var(--mw-sans)' }}
           >
-            30+ companies advised. $600M+ in funding raised. 10 acquisitions to Meta, Sony, Zynga, and AOL. I bring the technical leadership that gets startups from zero to exit.
+            30+ companies advised. $250M+ in funding raised. 10 acquisitions to Meta, Sony, Zynga, and AOL. I bring the technical leadership that gets startups from zero to exit.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
@@ -266,17 +266,12 @@ const CURRENT_WORKS = [
     tag: 'AI Product',
     image: '/projects/martinwells/cakewalk.png',
   },
-  {
-    title: 'OpenClaw Marketing',
-    description: 'Done-for-you AI marketing teams. We deploy and manage OpenClaw-based agents that handle social, ads, PR, SEO, email, and analytics.',
-    href: '/openclaw-marketing',
-    tag: 'AI Service',
-  },
-  {
+{
     title: 'AgentHound',
     description: 'A pytest-native testing framework for AI agent workflows. Record real sessions, replay them deterministically, and assert on behavior with zero API calls.',
     href: 'https://agenthound.ai',
     tag: 'Open Source',
+    image: '/projects/martinwells/agenthound-screenshot.jpg',
   },
   {
     title: 'Superwork',
@@ -354,7 +349,7 @@ function CurrentWorksSection() {
 
 const STATS = [
   { value: '30+', label: 'Companies Advised' },
-  { value: '$600M+', label: 'Funding Raised' },
+  { value: '$250M+', label: 'Funding Raised' },
   { value: '10', label: 'Acquisitions' },
   { value: '50+', label: 'Engineers Led' },
 ]
@@ -429,7 +424,7 @@ function TrackRecordSection() {
 const EXPERIENCE = [
   {
     role: 'Fractional CTO',
-    company: 'Harken',
+    company: 'Martin Wells',
     period: '2018 - Present',
     description: 'AI product leadership across RAG systems, computer vision pipelines, and enterprise AI transformation. Built team of 20+ ML engineers.',
   },

@@ -89,7 +89,7 @@ export class BlogClient {
   constructor(config: BlogClientConfig) {
     this.apiKey = config.apiKey
     this.projectId = config.projectId
-    this.baseUrl = config.options?.baseUrl ?? 'https://api.cakewalk.ai'
+    this.baseUrl = config.options?.baseUrl ?? 'https://api.cakewalk.ai/api/v1'
     this.cacheTtl = (config.options?.cacheTtl ?? 300) * 1000 // Convert to ms
   }
 
@@ -203,7 +203,7 @@ export function getBlogClient(project: string): BlogClient {
     apiKey,
     projectId,
     options: {
-      baseUrl: baseUrl || 'https://api.cakewalk.ai',
+      baseUrl: baseUrl || 'https://api.cakewalk.ai/api/v1',
       cacheTtl: isDevelopment ? 10 : 300,
     },
   })
