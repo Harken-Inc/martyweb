@@ -273,6 +273,12 @@ const CURRENT_WORKS = [
     tag: 'AI Service',
   },
   {
+    title: 'AgentHound',
+    description: 'A pytest-native testing framework for AI agent workflows. Record real sessions, replay them deterministically, and assert on behavior with zero API calls.',
+    href: 'https://agenthound.ai',
+    tag: 'Open Source',
+  },
+  {
     title: 'Superwork',
     description: 'A newsletter about the future of work, AI, and building things that matter.',
     href: 'https://superworknow.substack.com/subscribe',
@@ -694,7 +700,7 @@ export default function MartinWellsHome() {
         <ServicesSection />
         <TrackRecordSection />
         <ExperienceSection />
-        {/* <CurrentWorksSection /> */}
+        <CurrentWorksSection />
         <ResourcesSection />
         <ContactSection />
       </main>
