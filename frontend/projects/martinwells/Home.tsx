@@ -269,16 +269,9 @@ const CURRENT_WORKS = [
 {
     title: 'AgentHound',
     description: 'A pytest-native testing framework for AI agent workflows. Record real sessions, replay them deterministically, and assert on behavior with zero API calls.',
-    href: 'https://agenthound.ai',
+    href: 'https://github.com/martinwells/agenthound',
     tag: 'Open Source',
     image: '/projects/martinwells/agenthound-screenshot.jpg',
-  },
-  {
-    title: 'Superwork',
-    description: 'A newsletter about the future of work, AI, and building things that matter.',
-    href: 'https://superworknow.substack.com/subscribe',
-    tag: 'Newsletter',
-    image: '/projects/martinwells/superwork.png',
   },
 ]
 
