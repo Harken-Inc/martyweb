@@ -5,6 +5,7 @@ import CakewalkHome from '@projects/cakewalk/Home'
 import LearningMakingHome from '@projects/learningmaking/Home'
 import MartinWellsHome from '@projects/martinwells/Home'
 import HarkenHome from '@projects/harken/Home'
+import MartinWellsIOHome from '@projects/martinwellsio/Home'
 import { ComponentType } from 'react'
 
 export const templates: Record<string, ComponentType> = {
@@ -13,8 +14,9 @@ export const templates: Record<string, ComponentType> = {
   cakewalk: CakewalkHome,
   learningmaking: LearningMakingHome,
   martinwells: MartinWellsHome,
+  martinwellsio: MartinWellsIOHome,
   harken: HarkenHome,
   default: DefaultHome,
 }
 
-export { HightailHome, InnovatorHome, DefaultHome, CakewalkHome, LearningMakingHome, MartinWellsHome, HarkenHome }
+export { HightailHome, InnovatorHome, DefaultHome, CakewalkHome, LearningMakingHome, MartinWellsHome, HarkenHome, MartinWellsIOHome }

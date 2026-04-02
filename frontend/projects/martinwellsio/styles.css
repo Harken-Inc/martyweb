@@ -1,0 +1,45 @@
+/* martinwells.io — author site */
+:root {
+  --mwio-bg: #0a0a0a;
+  --mwio-card: #111111;
+  --mwio-border: #1a1a1a;
+  --mwio-cyan: #00e5cc;
+  --mwio-cyan-dim: rgba(0, 229, 204, 0.15);
+  --mwio-text: #e0e0e0;
+  --mwio-muted: #888;
+}
+
+/* Starfield background */
+@keyframes drift {
+  from { background-position: 0 0, 40px 60px, 80px 30px; }
+  to   { background-position: 200px 400px, 240px 460px, 280px 430px; }
+}
+
+.mwio-stars {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.2), transparent);
+  background-size: 200px 200px, 150px 150px, 250px 250px;
+  animation: drift 120s linear infinite;
+}
+
+/* Glow pulse on title */
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(0, 229, 204, 0.3), 0 0 60px rgba(0, 229, 204, 0.1); }
+  50%      { text-shadow: 0 0 30px rgba(0, 229, 204, 0.5), 0 0 80px rgba(0, 229, 204, 0.2); }
+}
+
+.mwio-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Button glow */
+@keyframes btn-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 229, 204, 0.3); }
+  50%      { box-shadow: 0 0 25px rgba(0, 229, 204, 0.5); }
+}
+
+.mwio-btn-glow {
+  animation: btn-glow 3s ease-in-out infinite;
+}

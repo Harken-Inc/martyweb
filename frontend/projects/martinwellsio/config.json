@@ -1,0 +1,20 @@
+{
+  "name": "Martin Wells",
+  "domain": "martinwells.io",
+  "description": "Science fiction author. Book 1 of The Remnant Series — Impact — coming soon.",
+  "tagline": "Science Fiction Author",
+  "theme": {
+    "primaryColor": "#0a0a0a",
+    "secondaryColor": "#00e5cc",
+    "accentColor": "#00e5cc",
+    "fontFamily": "Inter"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "The Book", "path": "#book" },
+    { "label": "Join the List", "path": "#signup" }
+  ],
+  "social": {
+    "email": "martin.wells@gmail.com"
+  }
+}
