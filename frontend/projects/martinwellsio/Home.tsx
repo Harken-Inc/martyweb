@@ -94,7 +94,7 @@ function HeroSection() {
             className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-sm rounded-lg hover:brightness-110 transition mwio-btn-glow"
           >
             <Mail size={16} />
-            Get the First Three Chapters
+            Join the Mailing List
           </a>
         </motion.div>
       </div>
@@ -138,10 +138,10 @@ function SignupSection() {
         <FadeIn>
           <div className="bg-[var(--mwio-card)] border border-[var(--mwio-border)] rounded-2xl p-10 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Get the First Three Chapters Free
+              Join the Mailing List
             </h2>
             <p className="text-base text-white/60 leading-relaxed mb-8">
-              Join the mailing list for the first three chapters of Impact and exclusive updates on The Remnant Series.
+              Get the first three chapters of Impact free, plus exclusive updates on The Remnant Series.
             </p>
             <a
               href="https://mailer.martinwells.io/subscribe/martin-wells"
