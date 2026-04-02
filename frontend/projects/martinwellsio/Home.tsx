@@ -96,6 +96,9 @@ function HeroSection() {
             <Mail size={16} />
             Join the Mailing List
           </a>
+          <p className="text-sm text-white/40 mt-3">
+            Get the first three chapters free, plus exclusive updates.
+          </p>
         </motion.div>
       </div>
     </section>
