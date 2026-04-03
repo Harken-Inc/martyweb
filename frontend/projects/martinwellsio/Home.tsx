@@ -94,10 +94,10 @@ function HeroSection() {
             className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-sm rounded-lg hover:brightness-110 transition mwio-btn-glow"
           >
             <Mail size={16} />
-            Join the Mailing List
+            Join the Advanced Reader Group
           </a>
           <p className="text-sm text-white/40 mt-3">
-            Get the first three chapters free, plus exclusive updates.
+            Get a free copy of the ebook in exchange for an honest review.
           </p>
         </motion.div>
       </div>
@@ -141,20 +141,20 @@ function SignupSection() {
         <FadeIn>
           <div className="bg-[var(--mwio-card)] border border-[var(--mwio-border)] rounded-2xl p-10 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Join the Mailing List
+              Join the Advanced Reader Group
             </h2>
             <p className="text-base text-white/60 leading-relaxed mb-8">
-              Get the first three chapters of Impact free, plus exclusive updates on The Remnant Series.
+              Receive a free copy of the ebook before launch. All we ask is an honest review.
             </p>
             <a
               href="https://mailer.martinwells.io/subscribe/martin-wells"
               className="inline-flex items-center justify-center gap-2 w-full px-7 py-4 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-base rounded-lg hover:brightness-110 transition mwio-btn-glow"
             >
               <Mail size={18} />
-              Join the List
+              Get Your Free Copy
             </a>
             <p className="text-xs text-white/30 mt-5">
-              No spam, ever. Unsubscribe anytime.
+              You&apos;ll be emailed a copy of the ebook. No spam, ever.
             </p>
           </div>
         </FadeIn>
