@@ -9,19 +9,13 @@
   --mwio-muted: #888;
 }
 
-/* Starfield background */
-@keyframes drift {
-  from { background-position: 0 0, 40px 60px, 80px 30px; }
-  to   { background-position: 200px 400px, 240px 460px, 280px 430px; }
-}
-
+/* Static starfield — no animation, no CPU cost */
 .mwio-stars {
   background-image:
     radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
     radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.3), transparent),
     radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.2), transparent);
   background-size: 200px 200px, 150px 150px, 250px 250px;
-  animation: drift 120s linear infinite;
 }
 
 /* Glow pulse on title */
