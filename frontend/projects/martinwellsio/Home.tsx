@@ -62,7 +62,7 @@ function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/projects/martinwellsio/impact-cover.png?v=5"
+            src="/projects/martinwellsio/impact-cover.png?v=6"
             alt="Impact — Book 1 of The Remnant Series"
             className="w-64 md:w-80 rounded-lg shadow-2xl shadow-black/60 border border-white/10"
             style={{
