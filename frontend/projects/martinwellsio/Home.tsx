@@ -33,7 +33,7 @@ function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-[#1a1a1a]">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a href="/" className="text-sm font-semibold tracking-wide text-white/90">
-          MARTIN WELLS
+          MARTIN JAMES
         </a>
         <div className="flex items-center gap-6">
           <a href="#book" className="text-sm text-white/50 hover:text-white/90 transition-colors">
@@ -62,7 +62,7 @@ function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/projects/martinwellsio/impact-cover.jpg"
+            src="/projects/martinwellsio/IMPACT.jpg"
             alt="Impact — Book 1 of The Remnant Series"
             className="w-64 md:w-80 rounded-lg shadow-2xl shadow-black/60"
             style={{
@@ -84,7 +84,7 @@ function HeroSection() {
             IMPACT
           </h1>
           <p className="text-xl md:text-2xl text-white/60 font-light mb-2">
-            by Martin Wells
+            by Martin James
           </p>
           <p className="text-sm tracking-[0.15em] uppercase text-[var(--mwio-cyan)]/70 mt-4 mb-2">
             Release date: May 1, 2026
@@ -150,7 +150,7 @@ function SignupSection() {
               Receive a free copy of the ebook before launch. All we ask is an honest review.
             </p>
             <a
-              href="https://mailer.martinwells.io/subscribe/martin-wells"
+              href="https://mailer.martinjames.world/subscribe/martin-james"
               className="inline-flex items-center justify-center gap-2 w-full px-7 py-4 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-base rounded-lg hover:brightness-110 transition mwio-btn-glow"
             >
               <Mail size={18} />
@@ -171,7 +171,7 @@ function Footer() {
     <footer className="border-t border-[var(--mwio-border)] py-8 px-6">
       <div className="max-w-5xl mx-auto text-center">
         <span className="text-sm text-white/30">
-          &copy; {new Date().getFullYear()} Martin Wells
+          &copy; {new Date().getFullYear()} Martin James
         </span>
       </div>
     </footer>
