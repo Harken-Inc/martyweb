@@ -86,7 +86,10 @@ function HeroSection() {
           <p className="text-xl md:text-2xl text-white/60 font-light mb-2">
             by Martin Wells
           </p>
-          <p className="text-base text-white/40 mt-6 max-w-md">
+          <p className="text-sm tracking-[0.15em] uppercase text-[var(--mwio-cyan)]/70 mt-4 mb-2">
+            Release date: May 1, 2026
+          </p>
+          <p className="text-base text-white/40 max-w-md">
             Hard science fiction. First contact. A crew sent to contain a threat finds something far more complicated.
           </p>
           <a
