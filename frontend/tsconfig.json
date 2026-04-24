@@ -53,7 +53,9 @@
     ".next-innovator/types/**/*.ts",
     ".next-innovator/dev/types/**/*.ts",
     ".next-martinwellsio/types/**/*.ts",
-    ".next-martinwellsio/dev/types/**/*.ts"
+    ".next-martinwellsio/dev/types/**/*.ts",
+    ".next-martinjamesworld/types/**/*.ts",
+    ".next-martinjamesworld/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
