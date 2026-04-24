@@ -1,8 +1,8 @@
 {
   "name": "Martin James",
   "domain": "martinjames.world",
-  "description": "Science fiction author. Book 1 of The Remnant Series — Impact — coming soon.",
-  "tagline": "Science Fiction Author",
+  "description": "Military science fiction author. The Controllers series — Outlands and Sonara — available now.",
+  "tagline": "Military Science Fiction Author",
   "theme": {
     "primaryColor": "#0a0a0a",
     "secondaryColor": "#00e5cc",
@@ -11,7 +11,7 @@
   },
   "navigation": [
     { "label": "Home", "path": "/" },
-    { "label": "The Book", "path": "#book" },
+    { "label": "The Books", "path": "#books" },
     { "label": "Join the List", "path": "#signup" }
   ],
   "social": {

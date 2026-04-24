@@ -1,15 +1,44 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail } from 'lucide-react'
 import './styles.css'
 
-const BLURB = [
-  'In 2033, a research station in the outer solar system detects biological material drifting inward from deep space. It is complex, organized, and when introduced to terrestrial proteins, it begins restructuring them.',
-  'The source is a single object on a 25-million-year orbit, approaching the sun for the first time in recorded history. A crew is sent to assess the threat before the material reaches Earth.',
-  'What they find beneath the surface is not what anyone prepared for. A world of living ice. Subsurface chambers built by biology, not geology. And beings whose existence raises a question the crew\u2019s mission was never designed to answer.',
-  'They were sent to contain a threat. What they found is far more complicated.',
+type Book = {
+  id: string
+  series: string
+  title: string
+  cover: string
+  blurb: string[]
+  status: string
+}
+
+const BOOKS: Book[] = [
+  {
+    id: 'outlands',
+    series: 'Controllers · Book 1',
+    title: 'OUTLANDS',
+    cover: '/projects/martinwellsio/outlands-cover.jpg',
+    status: 'Available now',
+    blurb: [
+      'Kade Mercer takes a hazard-pay escort contract into the Vulcore volcanic Outlands — escort a CCU field assessor deep into Renegade territory to find out why a rogue collective expanded beyond its borders.',
+      'The further they push in, the more obviously the mission isn’t what the briefing said. The crystalline substrate inside Renegade bots matches artifacts buried in Scaven clan tombs. A Phoenix Collective fortress manufactures machines to a design no CCU database has ever seen. And then they encounter the Terminus — a bot so large Kade’s tactical systems can’t classify it.',
+      'A freelance bot operator. A mission built on a lie. And technology with origins nobody is willing to admit.',
+    ],
+  },
+  {
+    id: 'sonara',
+    series: 'Controllers · Book 2',
+    title: 'SONARA',
+    cover: '/projects/martinwellsio/sonara-cover.jpg',
+    status: 'Available now',
+    blurb: [
+      'A wounded fourteen-year-old boy arrives at Kade Mercer’s workshop carrying a name and a plea. Daren’s cell has been destroyed. Kade walks away from the contract of a lifetime and returns to the Outlands.',
+      'He discovers the Sonara: thousands of resonance-sensitive Controllers hidden across the frontier for 175 years since the great betrayal. Their cells are being hunted by Major Linden and the Accord — and drawn out by the Phoenix Collective’s instinctive response to sonite activation.',
+      'Kade trains through five trials in dark tunnels. Failure. Humiliation. Breakthrough. When the Pegasus and the Scaven Storm Chasers break the Phoenix offensive, the Sonara chant his name.',
+    ],
+  },
 ]
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -36,8 +65,8 @@ function Navbar() {
           MARTIN JAMES
         </a>
         <div className="flex items-center gap-6">
-          <a href="#book" className="text-sm text-white/50 hover:text-white/90 transition-colors">
-            The Book
+          <a href="#books" className="text-sm text-white/50 hover:text-white/90 transition-colors">
+            The Books
           </a>
           <a
             href="#signup"
@@ -53,85 +82,87 @@ function Navbar() {
 
 function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-14 mwio-stars">
-      <div className="max-w-5xl mx-auto w-full flex flex-col md:flex-row items-center gap-12 md:gap-16 py-20">
-        <motion.div
-          className="shrink-0"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+    <section className="min-h-[70vh] flex items-center justify-center px-6 pt-14 mwio-stars">
+      <div className="max-w-4xl mx-auto w-full text-center py-20">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-sm tracking-[0.2em] uppercase text-[var(--mwio-cyan)] mb-4"
         >
-          <img
-            src="/projects/martinwellsio/IMPACT.jpg"
-            alt="Impact — Book 1 of The Remnant Series"
-            className="w-64 md:w-80 rounded-lg shadow-2xl shadow-black/60"
-            style={{
-              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))',
-            }}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
+          The Controllers Series
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-5xl md:text-7xl font-black text-white leading-tight mb-6 mwio-glow"
+        >
+          CYBOTS
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center md:text-left"
+          className="text-xl md:text-2xl text-white/60 font-light max-w-2xl mx-auto"
         >
-          <p className="text-sm tracking-[0.2em] uppercase text-[var(--mwio-cyan)] mb-4">
-            Book 1 &middot; The Remnant Series
-          </p>
-          <h1 className="text-6xl md:text-8xl font-black text-white leading-none mb-4 mwio-glow">
-            IMPACT
-          </h1>
-          <p className="text-xl md:text-2xl text-white/60 font-light mb-2">
-            by Martin James
-          </p>
-          <p className="text-sm tracking-[0.15em] uppercase text-[var(--mwio-cyan)]/70 mt-4 mb-2">
-            Release date: May 1, 2026
-          </p>
-          <p className="text-base text-white/40 max-w-md">
-            Hard science fiction. First contact. A crew sent to contain a threat finds something far more complicated.
-          </p>
-          <a
-            href="#signup"
-            className="inline-flex items-center gap-2 mt-8 px-7 py-3.5 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-sm rounded-lg hover:brightness-110 transition mwio-btn-glow"
-          >
-            <Mail size={16} />
-            Join the Advanced Reader Group
-          </a>
-          <p className="text-sm text-white/40 mt-3">
-            Get a free copy of the ebook in exchange for an honest review.
-          </p>
-        </motion.div>
+          Military science fiction by Martin James. A freelance bot operator. Warring factions on a frontier. And technology nobody is willing to admit the origins of.
+        </motion.p>
       </div>
     </section>
   )
 }
 
-function BlurbSection() {
+function BookCard({ book, index }: { book: Book; index: number }) {
+  const reverse = index % 2 === 1
   return (
-    <section id="book" className="py-24 px-6 bg-[var(--mwio-bg)]">
-      <div className="max-w-2xl mx-auto">
-        <FadeIn>
-          <p className="text-xs tracking-[0.2em] uppercase text-[var(--mwio-cyan)] mb-8 text-center">
-            The Story
+    <FadeIn>
+      <div
+        className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-16 py-12`}
+      >
+        <div className="shrink-0">
+          <img
+            src={book.cover}
+            alt={`${book.title} — ${book.series}`}
+            className="w-56 md:w-72 rounded-lg shadow-2xl shadow-black/60"
+            style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))' }}
+          />
+        </div>
+        <div className={`flex-1 ${reverse ? 'md:text-right' : 'md:text-left'} text-center`}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[var(--mwio-cyan)] mb-3">
+            {book.series}
           </p>
-        </FadeIn>
-        <div className="space-y-6 border-l-2 border-[var(--mwio-cyan)]/30 pl-8">
-          {BLURB.map((para, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
+          <h2 className="text-4xl md:text-5xl font-black text-white leading-none mb-3 mwio-glow">
+            {book.title}
+          </h2>
+          <p className="text-xs tracking-[0.15em] uppercase text-[var(--mwio-cyan)]/70 mb-5">
+            {book.status}
+          </p>
+          <div className={`space-y-4 ${reverse ? 'md:border-r-2 md:pr-6 md:border-l-0 md:pl-0' : 'md:border-l-2 md:pl-6'} border-[var(--mwio-cyan)]/30`}>
+            {book.blurb.map((para, i) => (
               <p
-                className={`text-lg leading-relaxed ${
-                  i === BLURB.length - 1
-                    ? 'text-white font-medium italic'
-                    : 'text-white/70'
+                key={i}
+                className={`text-base leading-relaxed ${
+                  i === book.blurb.length - 1 ? 'text-white font-medium italic' : 'text-white/70'
                 }`}
               >
                 {para}
               </p>
-            </FadeIn>
-          ))}
+            ))}
+          </div>
         </div>
+      </div>
+    </FadeIn>
+  )
+}
+
+function BooksSection() {
+  return (
+    <section id="books" className="py-16 px-6 bg-[var(--mwio-bg)]">
+      <div className="max-w-5xl mx-auto">
+        {BOOKS.map((book, i) => (
+          <BookCard key={book.id} book={book} index={i} />
+        ))}
       </div>
     </section>
   )
@@ -144,20 +175,20 @@ function SignupSection() {
         <FadeIn>
           <div className="bg-[var(--mwio-card)] border border-[var(--mwio-border)] rounded-2xl p-10 md:p-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Join the Advanced Reader Group
+              Join the Reader List
             </h2>
             <p className="text-base text-white/60 leading-relaxed mb-8">
-              Receive a free copy of the ebook before launch. All we ask is an honest review.
+              New releases, bonus chapters, and early access to the next book in the Controllers series.
             </p>
             <a
               href="https://mailer.martinjames.world/subscribe/martin-james"
               className="inline-flex items-center justify-center gap-2 w-full px-7 py-4 bg-[var(--mwio-cyan)] text-[#0a0a0a] font-semibold text-base rounded-lg hover:brightness-110 transition mwio-btn-glow"
             >
               <Mail size={18} />
-              Get Your Free Copy
+              Subscribe
             </a>
             <p className="text-xs text-white/30 mt-5">
-              You&apos;ll be emailed a copy of the ebook. No spam, ever.
+              No spam, ever.
             </p>
           </div>
         </FadeIn>
@@ -184,7 +215,7 @@ export default function MartinWellsIOHome() {
       <Navbar />
       <main>
         <HeroSection />
-        <BlurbSection />
+        <BooksSection />
         <SignupSection />
       </main>
       <Footer />
