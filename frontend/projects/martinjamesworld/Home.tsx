@@ -20,7 +20,7 @@ const BOOKS: Book[] = [
     series: 'Controllers · Book 1',
     title: 'OUTLANDS',
     cover: '/projects/martinjamesworld/outlands-cover.jpg',
-    status: 'Available now',
+    status: 'Available May 15, 2026',
     blurb: [
       'Kade Mercer takes a hazard-pay escort contract into the Vulcore volcanic Outlands — escort a CCU field assessor deep into Renegade territory to find out why a rogue collective expanded beyond its borders.',
       'The further they push in, the more obviously the mission isn’t what the briefing said. The crystalline substrate inside Renegade bots matches artifacts buried in Scaven clan tombs. A Phoenix Collective fortress manufactures machines to a design no CCU database has ever seen. And then they encounter the Terminus — a bot so large Kade’s tactical systems can’t classify it.',
@@ -32,7 +32,7 @@ const BOOKS: Book[] = [
     series: 'Controllers · Book 2',
     title: 'SONARA',
     cover: '/projects/martinjamesworld/sonara-cover.jpg',
-    status: 'Available now',
+    status: 'Available June 15, 2026',
     blurb: [
       'A wounded fourteen-year-old boy arrives at Kade Mercer’s workshop carrying a name and a plea. Daren’s cell has been destroyed. Kade walks away from the contract of a lifetime and returns to the Outlands.',
       'He discovers the Sonara: thousands of resonance-sensitive Controllers hidden across the frontier for 175 years since the great betrayal. Their cells are being hunted by Major Linden and the Accord — and drawn out by the Phoenix Collective’s instinctive response to sonite activation.',
