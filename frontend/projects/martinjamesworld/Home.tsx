@@ -19,7 +19,7 @@ const BOOKS: Book[] = [
     id: 'outlands',
     series: 'Controllers · Book 1',
     title: 'OUTLANDS',
-    cover: '/projects/martinwellsio/outlands-cover.jpg',
+    cover: '/projects/martinjamesworld/outlands-cover.jpg',
     status: 'Available now',
     blurb: [
       'Kade Mercer takes a hazard-pay escort contract into the Vulcore volcanic Outlands — escort a CCU field assessor deep into Renegade territory to find out why a rogue collective expanded beyond its borders.',
@@ -31,7 +31,7 @@ const BOOKS: Book[] = [
     id: 'sonara',
     series: 'Controllers · Book 2',
     title: 'SONARA',
-    cover: '/projects/martinwellsio/sonara-cover.jpg',
+    cover: '/projects/martinjamesworld/sonara-cover.jpg',
     status: 'Available now',
     blurb: [
       'A wounded fourteen-year-old boy arrives at Kade Mercer’s workshop carrying a name and a plea. Daren’s cell has been destroyed. Kade walks away from the contract of a lifetime and returns to the Outlands.',
@@ -209,7 +209,7 @@ function Footer() {
   )
 }
 
-export default function MartinWellsIOHome() {
+export default function MartinJamesWorldHome() {
   return (
     <div className="min-h-screen bg-[var(--mwio-bg)] text-white" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
