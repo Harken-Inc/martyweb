@@ -17,7 +17,7 @@ type Book = {
 const BOOKS: Book[] = [
   {
     id: 'outlands',
-    series: 'Controllers · Book 1',
+    series: 'Cybots · Book 1',
     title: 'OUTLANDS',
     cover: '/projects/martinjamesworld/outlands-cover.jpg',
     status: 'Available May 15, 2026',
@@ -29,7 +29,7 @@ const BOOKS: Book[] = [
   },
   {
     id: 'sonara',
-    series: 'Controllers · Book 2',
+    series: 'Cybots · Book 2',
     title: 'SONARA',
     cover: '/projects/martinjamesworld/sonara-cover.jpg',
     status: 'Available June 15, 2026',
@@ -90,7 +90,7 @@ function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-sm tracking-[0.2em] uppercase text-[var(--mwio-cyan)] mb-4"
         >
-          The Controllers Series
+          The Cybots Series
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -178,7 +178,7 @@ function SignupSection() {
               Join the Reader List
             </h2>
             <p className="text-base text-white/60 leading-relaxed mb-8">
-              New releases, bonus chapters, and early access to the next book in the Controllers series.
+              New releases, bonus chapters, and early access to the next book in the Cybots series.
             </p>
             <a
               href="https://mailer.martinjames.world/subscribe/martin-james"
