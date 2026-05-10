@@ -175,11 +175,6 @@ function ProofSection() {
             </FadeIn>
           ))}
         </div>
-        <FadeIn delay={0.3}>
-          <p className="mt-10 md:mt-12 text-center text-sm text-[var(--mw-muted)] max-w-2xl mx-auto leading-relaxed">
-            Currently CTO at Datapod following a two-year technical due diligence into the company&apos;s deep engineering IP.
-          </p>
-        </FadeIn>
       </div>
     </section>
   )
