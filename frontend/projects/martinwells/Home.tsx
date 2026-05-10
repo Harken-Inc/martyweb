@@ -265,9 +265,7 @@ function ContactSection() {
             Get In Touch
           </p>
           <h2 className="mw-serif text-3xl md:text-5xl font-bold leading-tight tracking-tight mb-8">
-            Four engagements per year.
-            <br className="hidden md:block" />
-            <span className="text-[var(--mw-accent)]"> One opening for Q3 2026.</span>
+            Let&apos;s talk.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
