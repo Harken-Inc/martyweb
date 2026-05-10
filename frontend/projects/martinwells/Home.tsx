@@ -13,7 +13,7 @@ const NAV_LINKS = [
 ]
 
 const CAL_URL = 'https://cal.com/martinwells'
-const BOOK_URL = 'https://www.amazon.com/dp/' // ASIN to be wired in once live
+const BOOK_URL = 'https://www.amazon.com/dp/B0GZ8M8Y7H'
 const EMAIL = 'martin@martinwells.com'
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
