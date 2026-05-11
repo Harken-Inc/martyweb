@@ -160,7 +160,7 @@ function ProofSection() {
             Track Record
           </p>
           <h2 className="mw-serif text-3xl md:text-4xl font-bold text-[var(--mw-foreground)] text-center mb-12 md:mb-16">
-            Three operator exits. Four building decades.
+            Three operator exits. 25 years building.
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
