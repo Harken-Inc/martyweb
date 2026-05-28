@@ -6,9 +6,9 @@ import { Calendar, Mail, BookOpen, Menu, X } from 'lucide-react'
 import './styles.css'
 
 const NAV_LINKS = [
-  { label: 'The Book', href: '#book' },
   { label: 'Track Record', href: '#proof' },
-  { label: 'The Assessment', href: '#offer' },
+  { label: 'The Engagement', href: '#offer' },
+  { label: 'The Book', href: '#book' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -91,22 +91,21 @@ function Navbar() {
 
 function HeroSection() {
   return (
-    <section id="book" className="relative pt-28 pb-20 md:pt-32 md:pb-28 px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-center">
+    <section className="relative pt-28 pb-20 md:pt-32 md:pb-28 px-6 overflow-hidden">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="order-2 md:order-1"
         >
           <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-5 font-semibold">
-            New from Martin Wells
+            Fractional CTO &middot; AI Advisor
           </p>
           <h1 className="mw-serif text-4xl md:text-6xl font-bold text-[var(--mw-foreground)] leading-[1.05] tracking-tight">
-            I help PE-backed companies turn AI into EBITDA.
+            Senior technical leadership, without the full-time hire.
           </h1>
           <p className="mt-6 text-lg md:text-xl text-[var(--mw-muted)] leading-relaxed max-w-xl">
-            A 3-week diagnostic identifies exactly where AI moves margin in your portfolio companies. Then I help you capture it.
+            I work alongside founders at YC, Series A, and Series B startups — owning architecture, hiring, AI integration, and the calls only a seasoned operator gets right.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a
@@ -117,30 +116,34 @@ function HeroSection() {
               Book a Call
             </a>
             <a
-              href={BOOK_URL}
+              href="#offer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-[var(--mw-foreground)] text-[var(--mw-foreground)] font-semibold text-sm rounded-md hover:bg-[var(--mw-surface)] transition-colors"
             >
-              <BookOpen size={16} />
-              Get the Book
+              See the Engagement
             </a>
           </div>
           <p className="mt-8 text-sm text-[var(--mw-muted)] leading-relaxed max-w-xl">
-            Three operator exits. Advisor and technical co-founder to companies acquired by Meta, Sony, and AOL. $250M+ raised.
+            Three operator exits. Advisor to 30+ founders. Author of <a href={BOOK_URL} className="text-[var(--mw-foreground)] underline decoration-[var(--mw-accent)] decoration-2 underline-offset-4 hover:text-[var(--mw-accent)]"><em>AI Alpha</em></a>.
           </p>
         </motion.div>
 
-        <motion.div
+        <motion.a
+          href={BOOK_URL}
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.15 }}
-          className="order-1 md:order-2 flex justify-center md:justify-end"
+          className="hidden md:flex flex-col items-end gap-3 group"
+          aria-label="AI Alpha on Amazon"
         >
           <img
             src="/projects/martinwells/alpha-book-cover.jpg"
             alt="AI Alpha — How PE Firms Find and Capture the Hidden AI Value in Every Portfolio Company"
-            className="w-56 md:w-80 mw-cover-shadow rounded-sm"
+            className="w-56 mw-cover-shadow rounded-sm transition-transform group-hover:-translate-y-1"
           />
-        </motion.div>
+          <span className="text-xs text-[var(--mw-muted)] group-hover:text-[var(--mw-accent)] transition-colors flex items-center gap-1">
+            <BookOpen size={12} /> Author of AI Alpha
+          </span>
+        </motion.a>
       </div>
     </section>
   )
@@ -182,43 +185,43 @@ function ProofSection() {
 
 function OfferSection() {
   const deliverables = [
-    'Executive summary your IC or board can read in 5 minutes',
-    'Prioritized list of 5–7 AI initiatives, ranked by EBITDA impact',
-    'Quick-wins section — actions for the first 30 days using existing resources',
-    '6-month execution roadmap with required investment per initiative',
-    '60-minute executive briefing to walk through findings',
+    'Weekly architecture and roadmap review with your founders or product lead',
+    'Hands-on hiring help — JDs, sourcing, technical interviews, offer calls',
+    'Code-level mentorship for your senior engineers',
+    'Vendor, infrastructure, and build-vs-buy calls',
+    'AI integration strategy — what to ship, what to skip, what to defer',
   ]
   const audience = [
-    'PE operating partners and value creation teams running AI strategy across portfolio companies',
-    'CEOs of PE-backed companies ($10M–$100M revenue) who own the AI agenda directly',
-    'Boards weighing the AI investment thesis on a deal already in motion',
+    'Pre-seed and seed founders without a CTO who need someone in the room before the wrong architectural call gets baked in',
+    'Series A and B teams whose first technical hire needs a senior counterweight',
+    'Growth-stage companies adding AI to existing product and deciding what good looks like',
   ]
   return (
     <section id="offer" className="py-20 md:py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <FadeIn>
           <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-3 font-semibold">
-            The Offer
+            The Engagement
           </p>
           <h2 className="mw-serif text-3xl md:text-5xl font-bold text-[var(--mw-foreground)] leading-tight tracking-tight">
-            The AI Readiness Assessment
+            Fractional CTO, embedded in your team.
           </h2>
         </FadeIn>
 
         <div className="mt-8 md:mt-10 space-y-5 text-base md:text-lg text-[var(--mw-muted)] leading-relaxed">
           <FadeIn delay={0.05}>
             <p>
-              Most mid-market AI initiatives don&apos;t fail in the technology — they fail in the diagnosis. The result: $40K/month in tools nobody uses, pilots that never ship, and an EBITDA gap that nobody can quantify.
+              Most early-stage teams need a CTO long before they can afford one. I fill that gap. I sit alongside your founders and product team, own the technical calls a senior operator should own, and unblock the ones your engineers can&apos;t make alone.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p>
-              The AI Readiness Assessment is a 3-week engagement. I interview your CEO, CTO, and 3 department heads. I audit the tech stack, data infrastructure, and current AI spend. You get a 15-page report with a prioritized roadmap — 90 days, 6 months, 12 months — every initiative ranked by EBITDA impact, with the math.
+              Typical engagement: 8–12 hours per week, three-month minimum. I&apos;m in your standups, your slack, your hiring loop, and your architecture decisions. You get a senior technologist&apos;s judgement without the $400K salary, equity grant, or recruiting cycle.
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>
             <p className="text-[var(--mw-foreground)] font-medium">
-              Fixed fee. Fixed scope. Fixed timeline. If the roadmap doesn&apos;t earn back 10× the assessment cost in year one, we shake hands and part friends.
+              Capped engagements. I take a small handful at a time so the founders I work with get my full attention.
             </p>
           </FadeIn>
         </div>
@@ -251,6 +254,42 @@ function OfferSection() {
             </ul>
           </FadeIn>
         </div>
+      </div>
+    </section>
+  )
+}
+
+function BookSection() {
+  return (
+    <section id="book" className="py-16 md:py-20 px-6 bg-[var(--mw-surface)]">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+        <FadeIn>
+          <a href={BOOK_URL} aria-label="AI Alpha on Amazon" className="block md:flex-shrink-0">
+            <img
+              src="/projects/martinwells/alpha-book-cover.jpg"
+              alt="AI Alpha"
+              className="w-40 mx-auto md:mx-0 mw-cover-shadow rounded-sm"
+            />
+          </a>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-3 font-semibold">
+            The Book
+          </p>
+          <h2 className="mw-serif text-2xl md:text-3xl font-bold text-[var(--mw-foreground)] leading-tight tracking-tight mb-4">
+            AI Alpha
+          </h2>
+          <p className="text-base md:text-lg text-[var(--mw-muted)] leading-relaxed mb-6 max-w-xl">
+            <em>How PE Firms Find and Capture the Hidden AI Value in Every Portfolio Company.</em> Written for operators and investors who need to move from AI theatre to AI EBITDA. The diagnostic framework works just as well inside a startup.
+          </p>
+          <a
+            href={BOOK_URL}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--mw-foreground)] underline decoration-[var(--mw-accent)] decoration-2 underline-offset-4 hover:text-[var(--mw-accent)] transition-colors"
+          >
+            <BookOpen size={14} />
+            Get the book on Amazon
+          </a>
+        </FadeIn>
       </div>
     </section>
   )
@@ -295,8 +334,7 @@ function Footer() {
   return (
     <footer className="bg-[var(--mw-foreground)] text-white/60 border-t border-white/10 py-8 px-6">
       <div className="max-w-5xl mx-auto text-center text-sm leading-relaxed">
-        © {new Date().getFullYear()} Martin Wells. Author of{' '}
-        <em className="text-white/80">AI Alpha: How PE Firms Find and Capture the Hidden AI Value in Every Portfolio Company.</em>
+        © {new Date().getFullYear()} Martin Wells. Fractional CTO and AI advisor.
       </div>
     </footer>
   )
@@ -310,6 +348,7 @@ export default function MartinWellsHome() {
         <HeroSection />
         <ProofSection />
         <OfferSection />
+        <BookSection />
         <ContactSection />
       </main>
       <Footer />

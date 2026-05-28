@@ -43,11 +43,11 @@ async function main() {
 
   ctx.fillStyle = '#ffffff';
   ctx.font = 'bold 56px Georgia, "Times New Roman", serif';
-  wrapText(ctx, 'AI strategy for PE-backed companies.', 80, 260, 540, 64);
+  wrapText(ctx, 'Senior technical leadership, without the full-time hire.', 80, 260, 540, 64);
 
   ctx.fillStyle = 'rgba(255,255,255,0.75)';
   ctx.font = '400 22px "Helvetica Neue", Helvetica, Arial, sans-serif';
-  wrapText(ctx, 'Author of AI Alpha. Three operator exits. AI Readiness Assessments.', 80, 470, 520, 32);
+  wrapText(ctx, 'Fractional CTO & AI advisor. Three operator exits. Author of AI Alpha.', 80, 480, 520, 32);
 
   // Save
   const outPath = path.join(__dirname, '../public/projects/martinwells/og-image.png');

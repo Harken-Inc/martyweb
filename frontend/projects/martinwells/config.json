@@ -1,8 +1,8 @@
 {
   "name": "Martin Wells",
   "domain": "martinwells.com",
-  "description": "25-year operator. Three exits. Author of AI Alpha. AI Readiness Assessments for PE operating partners and growth-stage CEOs.",
-  "tagline": "AI Strategy for PE-Backed Companies | Author of AI Alpha",
+  "description": "Fractional CTO and AI advisor for YC, Series A, and Series B startups. Three operator exits. Author of AI Alpha.",
+  "tagline": "Fractional CTO & AI Advisor",
   "theme": {
     "primaryColor": "#0b1e3a",
     "secondaryColor": "#e08a3c",
@@ -10,9 +10,9 @@
     "fontFamily": "Inter"
   },
   "navigation": [
-    { "label": "The Book", "path": "#book" },
     { "label": "Track Record", "path": "#proof" },
-    { "label": "The Assessment", "path": "#offer" },
+    { "label": "The Engagement", "path": "#offer" },
+    { "label": "The Book", "path": "#book" },
     { "label": "Contact", "path": "#contact" }
   ],
   "social": {
