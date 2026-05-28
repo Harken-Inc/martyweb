@@ -1,6 +1,6 @@
 // Generate og-image.png for martinwells.com (1200x630)
 // Run: node scripts/generate-martinwells-og.js
-const { createCanvas, loadImage, registerFont } = require('canvas');
+const { createCanvas } = require('canvas');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,39 +15,26 @@ async function main() {
   ctx.fillRect(0, 0, W, H);
 
   // Subtle radial highlight
-  const grad = ctx.createRadialGradient(W * 0.75, H * 0.5, 60, W * 0.75, H * 0.5, 700);
+  const grad = ctx.createRadialGradient(W * 0.85, H * 0.3, 60, W * 0.85, H * 0.3, 700);
   grad.addColorStop(0, 'rgba(224, 138, 60, 0.18)');
   grad.addColorStop(1, 'rgba(224, 138, 60, 0)');
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, W, H);
 
-  // Book cover on right
-  const coverPath = path.join(__dirname, '../public/projects/martinwells/alpha-book-cover.jpg');
-  const cover = await loadImage(coverPath);
-  const coverH = 500;
-  const coverW = (cover.width / cover.height) * coverH;
-  const coverX = W - coverW - 80;
-  const coverY = (H - coverH) / 2;
-  ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-  ctx.shadowBlur = 30;
-  ctx.shadowOffsetX = 0;
-  ctx.shadowOffsetY = 12;
-  ctx.drawImage(cover, coverX, coverY, coverW, coverH);
-  ctx.shadowColor = 'transparent';
-  ctx.shadowBlur = 0;
-
-  // Left text block
+  // Eyebrow
   ctx.fillStyle = '#e08a3c';
-  ctx.font = '600 18px "Helvetica Neue", Helvetica, Arial, sans-serif';
+  ctx.font = '600 22px "Helvetica Neue", Helvetica, Arial, sans-serif';
   ctx.fillText('MARTIN WELLS', 80, 200);
 
+  // Headline
   ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 56px Georgia, "Times New Roman", serif';
-  wrapText(ctx, 'Senior technical leadership, without the full-time hire.', 80, 260, 540, 64);
+  ctx.font = 'bold 72px Georgia, "Times New Roman", serif';
+  wrapText(ctx, 'Senior technical leadership, without the full-time hire.', 80, 290, W - 160, 82);
 
+  // Subline
   ctx.fillStyle = 'rgba(255,255,255,0.75)';
-  ctx.font = '400 22px "Helvetica Neue", Helvetica, Arial, sans-serif';
-  wrapText(ctx, 'Fractional CTO & AI advisor. Three operator exits. Author of AI Alpha.', 80, 480, 520, 32);
+  ctx.font = '400 26px "Helvetica Neue", Helvetica, Arial, sans-serif';
+  ctx.fillText('Fractional CTO & AI advisor. Three operator exits. 25 years building.', 80, 555);
 
   // Save
   const outPath = path.join(__dirname, '../public/projects/martinwells/og-image.png');

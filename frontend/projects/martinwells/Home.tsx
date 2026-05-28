@@ -92,7 +92,7 @@ function Navbar() {
 function HeroSection() {
   return (
     <section className="relative pt-28 pb-20 md:pt-32 md:pb-28 px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-12 md:gap-16 items-center">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ function HeroSection() {
           <h1 className="mw-serif text-4xl md:text-6xl font-bold text-[var(--mw-foreground)] leading-[1.05] tracking-tight">
             Senior technical leadership, without the full-time hire.
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-[var(--mw-muted)] leading-relaxed max-w-xl">
+          <p className="mt-6 text-lg md:text-xl text-[var(--mw-muted)] leading-relaxed">
             I work alongside founders at YC, Series A, and Series B startups — owning architecture, hiring, AI integration, and the calls only a seasoned operator gets right.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -122,28 +122,10 @@ function HeroSection() {
               See the Engagement
             </a>
           </div>
-          <p className="mt-8 text-sm text-[var(--mw-muted)] leading-relaxed max-w-xl">
-            Three operator exits. Advisor to 30+ founders. Author of <a href={BOOK_URL} className="text-[var(--mw-foreground)] underline decoration-[var(--mw-accent)] decoration-2 underline-offset-4 hover:text-[var(--mw-accent)]"><em>AI Alpha</em></a>.
+          <p className="mt-8 text-sm text-[var(--mw-muted)] leading-relaxed">
+            Three operator exits. Advisor to 30+ founders. 25 years building.
           </p>
         </motion.div>
-
-        <motion.a
-          href={BOOK_URL}
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.15 }}
-          className="hidden md:flex flex-col items-end gap-3 group"
-          aria-label="AI Alpha on Amazon"
-        >
-          <img
-            src="/projects/martinwells/alpha-book-cover.jpg"
-            alt="AI Alpha — How PE Firms Find and Capture the Hidden AI Value in Every Portfolio Company"
-            className="w-56 mw-cover-shadow rounded-sm transition-transform group-hover:-translate-y-1"
-          />
-          <span className="text-xs text-[var(--mw-muted)] group-hover:text-[var(--mw-accent)] transition-colors flex items-center gap-1">
-            <BookOpen size={12} /> Author of AI Alpha
-          </span>
-        </motion.a>
       </div>
     </section>
   )
