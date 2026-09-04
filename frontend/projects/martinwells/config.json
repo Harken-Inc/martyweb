@@ -13,7 +13,7 @@
     { "label": "Track Record", "path": "#proof" },
     { "label": "The Engagement", "path": "#offer" },
     { "label": "The Summit", "path": "#summit" },
-    { "label": "The Book", "path": "#book" },
+    { "label": "My Books", "path": "#book" },
     { "label": "Contact", "path": "#contact" }
   ],
   "social": {

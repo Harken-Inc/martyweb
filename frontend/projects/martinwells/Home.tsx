@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: 'Track Record', href: '#proof' },
   { label: 'The Engagement', href: '#offer' },
   { label: 'The Summit', href: '#summit' },
-  { label: 'The Book', href: '#book' },
+  { label: 'My Books', href: '#book' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -318,7 +318,7 @@ function BookSection() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-3 font-semibold">
-            The Book
+            My Books
           </p>
           <h2 className="mw-serif text-2xl md:text-3xl font-bold text-[var(--mw-foreground)] leading-tight tracking-tight mb-4">
             AI Alpha
