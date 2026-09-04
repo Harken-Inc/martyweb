@@ -2,18 +2,20 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Calendar, Mail, BookOpen, Menu, X } from 'lucide-react'
+import { Calendar, Mail, BookOpen, ArrowUpRight, Menu, X } from 'lucide-react'
 import './styles.css'
 
 const NAV_LINKS = [
   { label: 'Track Record', href: '#proof' },
   { label: 'The Engagement', href: '#offer' },
+  { label: 'The Summit', href: '#summit' },
   { label: 'The Book', href: '#book' },
   { label: 'Contact', href: '#contact' },
 ]
 
 const CAL_URL = 'https://cal.com/martinwells'
 const BOOK_URL = 'https://www.amazon.com/dp/B0GZ8M8Y7H'
+const SUMMIT_URL = 'https://innovatorsystems.com/'
 const EMAIL = 'martin@martinwells.com'
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -241,6 +243,66 @@ function OfferSection() {
   )
 }
 
+function SummitSection() {
+  const details = [
+    { label: 'When', value: '27\u201330 September 2026' },
+    { label: 'Where', value: 'San Francisco and the Valley' },
+    { label: 'Who', value: 'Australian founders and CXOs, two per company' },
+  ]
+  return (
+    <section id="summit" className="py-20 md:py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        <FadeIn>
+          <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-3 font-semibold">
+            The Summit
+          </p>
+          <h2 className="mw-serif text-3xl md:text-5xl font-bold text-[var(--mw-foreground)] leading-tight tracking-tight">
+            Innovator Summit 2026
+          </h2>
+        </FadeIn>
+
+        <div className="mt-8 md:mt-10 space-y-5 text-base md:text-lg text-[var(--mw-muted)] leading-relaxed max-w-2xl">
+          <FadeIn delay={0.05}>
+            <p>
+              I run a four-day, closed-door program in Silicon Valley for Australian founders and CXOs taking their company into the US, held the week before SF Tech Week.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p>
+              No keynotes. Working sessions with one operator on one problem, roundtables under Chatham House rule, and long dinners where the useful things get said. Go-to-market, US fundraising, enterprise BD, pricing for America, your first US hire, and flipping the cap table.
+            </p>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.15}>
+          <div className="mt-10 grid sm:grid-cols-3 gap-6 md:gap-8 border-t border-[var(--mw-border)] pt-8">
+            {details.map(d => (
+              <div key={d.label}>
+                <p className="text-xs tracking-[0.2em] uppercase text-[var(--mw-accent)] mb-2 font-semibold">
+                  {d.label}
+                </p>
+                <p className="text-sm md:text-base text-[var(--mw-foreground)] leading-relaxed">{d.value}</p>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.2}>
+          <a
+            href={SUMMIT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-[var(--mw-foreground)] underline decoration-[var(--mw-accent)] decoration-2 underline-offset-4 hover:text-[var(--mw-accent)] transition-colors"
+          >
+            Apply at innovatorsystems.com
+            <ArrowUpRight size={14} />
+          </a>
+        </FadeIn>
+      </div>
+    </section>
+  )
+}
+
 function BookSection() {
   return (
     <section id="book" className="py-16 md:py-20 px-6 bg-[var(--mw-surface)]">
@@ -330,6 +392,7 @@ export default function MartinWellsHome() {
         <HeroSection />
         <ProofSection />
         <OfferSection />
+        <SummitSection />
         <BookSection />
         <ContactSection />
       </main>

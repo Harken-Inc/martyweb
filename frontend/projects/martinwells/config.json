@@ -1,7 +1,7 @@
 {
   "name": "Martin Wells",
   "domain": "martinwells.com",
-  "description": "Fractional CTO and AI advisor for YC, Series A, and Series B startups. Three operator exits. Author of AI Alpha.",
+  "description": "Fractional CTO and AI advisor for YC, Series A, and Series B startups. Three operator exits. Author of AI Alpha. Host of the Innovator Summit in Silicon Valley.",
   "tagline": "Fractional CTO & AI Advisor",
   "theme": {
     "primaryColor": "#0b1e3a",
@@ -12,6 +12,7 @@
   "navigation": [
     { "label": "Track Record", "path": "#proof" },
     { "label": "The Engagement", "path": "#offer" },
+    { "label": "The Summit", "path": "#summit" },
     { "label": "The Book", "path": "#book" },
     { "label": "Contact", "path": "#contact" }
   ],
